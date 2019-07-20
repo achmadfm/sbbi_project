@@ -634,9 +634,9 @@ html.boxed .nav-secondary.sticky-active {
 }
 
 .btn-danger {
-	border-color: #d2322d;
-	background-color: #d2322d;
-	border-color: #d2322d #d2322d #a82824;
+	border-color: #EE564B;
+	background-color: #EE564B;
+	border-color: #EE564B #EE564B #a82824;
 	color: #FFF;
 }
 
@@ -766,14 +766,14 @@ html.boxed .nav-secondary.sticky-active {
 
 .btn-borders.btn-danger {
 	background: transparent;
-	border-color: #d2322d;
-	color: #d2322d;
+	border-color: #EE564B;
+	color: #EE564B;
 	text-shadow: none;
 }
 
 .btn-borders.btn-danger:hover, .btn-borders.btn-danger:focus {
 	background-color: #d74742;
-	border-color: #d2322d !important;
+	border-color: #EE564B !important;
 	color: #FFF;
 }
 
@@ -873,7 +873,7 @@ html.boxed .nav-secondary.sticky-active {
 }
 
 .label-danger {
-	background-color: #d2322d;
+	background-color: #EE564B;
 	color: #FFF;
 }
 
@@ -1060,7 +1060,7 @@ label.error#captcha-error {
 .table > thead > tr.danger > th,
 .table > tbody > tr.danger > th,
 .table > tfoot > tr.danger > th {
-	background-color: #d2322d;
+	background-color: #EE564B;
 	color: #FFF;
 }
 
@@ -6676,7 +6676,7 @@ section.timeline .timeline-box .owl-carousel {
 }
 
 .progress-bar-danger {
-	background-color: #d2322d;
+	background-color: #EE564B;
 	color: #FFF;
 }
 
