@@ -72,7 +72,7 @@
 							<div class="header-logo">
 								
 									<a href="<?php echo base_url()?>">
-										<img alt="Porto" width="100" height="100" src="<?php echo base_url()?>template/logo_b.png">
+										<img alt="Porto" width="90" height="90" src="<?php echo base_url()?>template/logo_b.png">
 									</a>
 								</div>
 							</div>
