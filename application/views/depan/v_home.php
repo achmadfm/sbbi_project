@@ -80,7 +80,7 @@
 							<div class="header-column">
 								<div class="header-logo">
 									<a href="<?php echo base_url()?>">
-										<img alt="Porto" width="75" height="75" src="<?php echo base_url()?>template/logo_b.png">
+										<img alt="Porto" width="100" height="100" src="<?php echo base_url()?>template/logo_b.png">
 									</a>
 								</div>
 								
@@ -237,7 +237,7 @@
 
 					        ?>
 									<li>
-										<center><a href="<?php echo base_url().'pengumuman'?>"><img width="100" height="100" src="<?php echo base_url().'template/toas.png'?>"  alt=" " /></a></center>
+										<center><a href="<?php echo base_url().'pengumuman'?>"><img width="75" height="75" src="<?php echo base_url().'template/toas.png'?>"  alt=" " /></a></center>
 										<br>
 										<h6><strong><?php echo $judul;?></strong></h6>
 										<i class="fa fa-calendar-o"><strong><em> Tanggal <?php echo Home::format_tanggal($tanggal);?></em></strong></i><br>
