@@ -634,20 +634,20 @@ html.boxed .nav-secondary.sticky-active {
 }
 
 .btn-danger {
-	border-color: #EE564B;
+	border-color: #2cbb00;
 	background-color: #EE564B;
-	border-color: #EE564B #EE564B #EE564B;
+	border-color: #2cbb00 #2cbb00 #2cbb00;
 	color: #FFF;
 }
 
 .btn-danger:hover {
-	border-color: #EE564B #EE564B #EE564B;
+	border-color: #2cbb00 #2cbb00 #2cbb00;
 	background-color: #EE564B;
 	color: #FFF;
 }
 
 .btn-danger:active, .btn-danger:focus {
-	border-color: #EE564B;
+	border-color: #2cbb00;
 	background-color: #EE564B;
 	color: #FFF;
 }
@@ -657,7 +657,7 @@ html.boxed .nav-secondary.sticky-active {
 }
 
 .btn-danger[disabled], .btn-danger[disabled]:hover, .btn-danger[disabled]:active, .btn-danger[disabled]:focus {
-	border-color: #EE564B;
+	border-color: #2cbb00;
 	background-color: #EE564B;
 	color: #CCC;
 }
@@ -773,7 +773,7 @@ html.boxed .nav-secondary.sticky-active {
 
 .btn-borders.btn-danger:hover, .btn-borders.btn-danger:focus {
 	background-color: #EE564B;
-	border-color: #EE564B !important;
+	border-color: #2cbb00 !important;
 	color: #FFF;
 }
 
