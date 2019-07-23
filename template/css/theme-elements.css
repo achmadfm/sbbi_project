@@ -642,13 +642,13 @@ html.boxed .nav-secondary.sticky-active {
 
 .btn-danger:hover {
 	border-color: #d74742 #d74742 #bd2d29;
-	background-color: #EE564B;
+	background-color: #d2322d;
 	color: #FFF;
 }
 
 .btn-danger:active, .btn-danger:focus {
 	border-color: #bd2d29;
-	background-color: #db584f;
+	background-color: #d2322d;
 	color: #FFF;
 }
 
