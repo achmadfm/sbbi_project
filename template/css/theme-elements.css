@@ -635,25 +635,25 @@ html.boxed .nav-secondary.sticky-active {
 
 .btn-danger {
 	border-color: #d2322d;
-	background-color: #d2322d;
+	background-color: #EE564B;
 	border-color: #d2322d #d2322d #a82824;
 	color: #FFF;
 }
 
 .btn-danger:hover {
 	border-color: #d74742 #d74742 #bd2d29;
-	background-color: #d74742;
+	background-color: #EE564B;
 	color: #FFF;
 }
 
 .btn-danger:active, .btn-danger:focus {
 	border-color: #bd2d29;
-	background-color: #bd2d29;
+	background-color: #EE564B;
 	color: #FFF;
 }
 
 .btn-danger.dropdown-toggle {
-	border-left-color: #bd2d29;
+	border-left-color: #EE564B;
 }
 
 .btn-danger[disabled], .btn-danger[disabled]:hover, .btn-danger[disabled]:active, .btn-danger[disabled]:focus {
