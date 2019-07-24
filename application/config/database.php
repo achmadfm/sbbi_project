@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'host' => 'http://binainsanibogor.bosowaschool.sch.id/',
+	'host' => 'http://bogor.bosowaschool.sch.id/',
 	'username' => 'bosowasc_binainsani',
 	'password' => 'binainsani13',
 	'database' => 'bosowasc_sbbi',
