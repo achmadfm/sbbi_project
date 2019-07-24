@@ -128,24 +128,10 @@
 					</table>
 				</center>
 				<?php else: ?>
-					<ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
-						<li data-option-value="*" class="active"><a href="#">Lihat Semua</a></li>
-						<?php
-							foreach($kategori->result_array() as $data){
-								$id = $data['id_prestasi'];
-								$nama = $data['nama_prestasi'];
-						?>
-						<li data-option-value=".<?php echo $id;?>"><a href="#"><?php echo $nama;?></a></li>
-					<?php }?>
-					</ul>
-
-					<hr>
-
-					<div class="row">
-
-						<div class="sort-destination-loader sort-destination-loader-showing">
-							<ul class="portfolio-list sort-destination" data-sort-id="portfolio">
-								<?php
+				<div class="col-lg-9">
+					<h4>Achievement Lists</h4>
+							<div class="toggle toggle-primary toggle-lg" data-plugin-toggle>
+							<?php
 									foreach($prestasi->result_array() as $i) :
 										$id_prestasi = $i['id_prestasi'];
 										$nama_prestasi = $i['nama_prestasi'];
@@ -160,29 +146,26 @@
 										$sampul = $i['sampul'];
 										$slug = $i['slug'];
 								?>
-								<li class="col-md-3 col-sm-6 col-xs-12 isotope-item <?php echo $id_kat_prestasi;?>">
-									<div class="portfolio-item">
-										<a href="<?php echo site_url().'achievements/'.$slug;?>">
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="<?php echo base_url().'template/students/prestasi/'.$sampul;?>" class="img-responsive" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner"><?php echo $nama_prestasi;?></span>
-														<span class="thumb-info-type"><?php echo $nama_kategori;?></span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
+								<section class="toggle">
+									<label><?php echo $nama_prestasi;?></label>
+									<div class="toggle-content">
+										<?php echo $deskripsi;?>
 									</div>
-								</li>
+								</section>
 							<?php endforeach;?>
-							</ul>
+							</div>
 						</div>
-					</div>
 				<?php endif;?>
+				<div class="col-lg-3">
+					<h4 class="heading-primary">Link-link Terkait</h4>
+					<ul class="nav nav-list flex-column">
+						<li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?php echo base_url('berita')?>">Berita Sekolah</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?php echo base_url('berita_boarding')?>">Berita Asrama</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?php echo base_url('insight_reading')?>">Insight Reading</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?php echo base_url('kontak')?>">Hubungi Kami</a></li>
+					</ul>
+				</div>
 				</div>
 
 			</div>
