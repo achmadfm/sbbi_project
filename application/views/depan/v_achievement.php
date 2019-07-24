@@ -113,8 +113,6 @@
 				</section>
 
 				<div class="container">
-
-					<h2>Bidang-bidang</h2>
 					<?php
 						$k = $kategori->num_rows();
 						$p = $prestasi->num_rows();
