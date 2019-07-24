@@ -155,17 +155,17 @@
 							<?php endforeach;?>
 							</div>
 						</div>
+						<div class="col-lg-3">
+							<h4 class="heading-primary">Link-link Terkait</h4>
+							<ul class="nav nav-list flex-column">
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>">Home</a></li>
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('berita')?>">Berita Sekolah</a></li>
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('berita_boarding')?>">Berita Asrama</a></li>
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('insight_reading')?>">Insight Reading</a></li>
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('kontak')?>">Hubungi Kami</a></li>
+							</ul>
+						</div>
 				<?php endif;?>
-				<div class="col-lg-3">
-					<h4 class="heading-primary">Link-link Terkait</h4>
-					<ul class="nav nav-list flex-column">
-						<li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="<?php echo base_url('berita')?>">Berita Sekolah</a></li>
-						<li class="nav-item"><a class="nav-link" href="<?php echo base_url('berita_boarding')?>">Berita Asrama</a></li>
-						<li class="nav-item"><a class="nav-link" href="<?php echo base_url('insight_reading')?>">Insight Reading</a></li>
-						<li class="nav-item"><a class="nav-link" href="<?php echo base_url('kontak')?>">Hubungi Kami</a></li>
-					</ul>
-				</div>
 				</div>
 
 			</div>
