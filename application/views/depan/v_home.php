@@ -160,9 +160,11 @@
             				    </div>
                             </div>
                         </div>
-							<a class="btn btn-primary btn-lg round" href="<?php echo base_url('Cilegon/info_sma')?>">Sekolah Menengah Atas</a>
-							<a class="btn btn-danger btn-lg round" href="<?php echo base_url('Cilegon/info_smp')?>">Sekolah Menengah Pertama</a>
-							<a class="btn btn-primary btn-lg round" href="<?php echo base_url('Cilegon/info_sd')?>">Sekolah Dasar</a>
+							<a class="btn btn-primary btn-lg round" href="<?php echo base_url('Sbbi/info_sma')?>">Sekolah Menengah Atas</a>
+							<a class="btn btn-danger btn-lg round" href="<?php echo base_url('Sbbi/info_smp')?>">Sekolah Menengah Pertama</a>
+							<a class="btn btn-primary btn-lg round" href="<?php echo base_url('Sbbi/info_sd')?>">Sekolah Dasar</a>
+							<a class="btn btn-danger btn-lg round" href="<?php echo base_url('Sbbi/info_tk')?>">Taman Kanak-kanak</a>
+						    <a class="btn btn-primary btn-lg round" href="<?php echo base_url('Sbbi/info_pg')?>">Play Group</a>
 					</center>	
 				</div>
 
