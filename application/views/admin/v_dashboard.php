@@ -194,7 +194,7 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="white-box">
-                        <h3 class="box-title">Statistik Pengunjung Bulan Ini (<?php echo date_default_timezone_set("Asia/Jakarta");?>)</h3>
+                        <h3 class="box-title">Statistik Pengunjung Bulan Ini (<?php date_default_timezone_set("Asia/Jakarta"); echo date('F'); ?>)</h3>
                         <canvas id="canvas" width="600" height="280"></canvas>
                     </div>
                   </div>
