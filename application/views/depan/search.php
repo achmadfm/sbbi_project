@@ -13,10 +13,10 @@
 	<nav class="header-nav-top">
 		<ul class="nav nav-pills">
 			<li class="nav-item d-none d-sm-block">
-				<a class="nav-link" href="https://universitasbosowa.ac.id/" target="_blank"><i class="fa fa-globe"></i> Universitas Bosowa</a>
+				<a class="nav-link" href="https://bosowafoundation.org" target="_blank"><i class="fa fa-globe"></i> Bosowa Foundation</a>
 			</li>
 			<li class="nav-item d-none d-sm-block">
-				<a class="nav-link" href="https://politeknikbosowa.ac.id/" target="_blank"><i class="fa fa-globe"></i> Politeknik Bosowa</a>
+				<a class="nav-link" href="https://cilegon.bosowaschool.sch.id/" target="_blank"><i class="fa fa-globe"></i> Bosowa Al-Azhar Cilegon</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="https://www.makassar.bosowaschool.sch.id" target="_blank"><i class="fa fa-globe"></i> Bosowa School Makassar</a>
