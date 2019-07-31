@@ -30,7 +30,7 @@
   	}
 
     function index(){
-      $jum=$this->m_artikel->get_all_articles();
+      $jum=$this->m_artikel->get_all_articles_by_status_publish();
       $page=$this->uri->segment(3);
       if(!$page):
           $offset = 0;

@@ -300,20 +300,6 @@
         });
 
         </script>
-        
-        <script type="text/javascript">
-          $("#alerttopright").fadeToggle(350);
-          $("#alerttopleft").fadeToggle(350);
-          $(".myadmin-alert .closed").click(function (event) {
-              $(this).parents(".myadmin-alert").fadeToggle(350);
-              return false;
-          });
-          /* Click to close */
-          $(".myadmin-alert-click").click(function (event) {
-              $(this).fadeToggle(350);
-              return false;
-          });
-        </script>
 </body>
 
 </html>

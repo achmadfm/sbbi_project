@@ -1,6 +1,8 @@
 <?php
     $query=$this->db->query("SELECT * FROM tbl_inbox WHERE inbox_status='1'");
     $query2=$this->db->query("SELECT * FROM tbl_komentar WHERE komentar_status='0'");
+    $query3=$this->db->query("SELECT * FROM tbl_artikel");
+    $artikel = $query3->row_array();
     $jum_pesan=$query->num_rows();
     $jum_comment=$query2->num_rows();
     $pesan=$jum_pesan;
@@ -85,6 +87,7 @@
                           $komentar_pesan=$k['komentar_isi'];
 
                           $tb = $komentar_tgl;
+                          date_default_timezone_set('Asia/Makassar');
                           $tanggal = date('d F Y');
                     ?>
                     <li>
@@ -98,10 +101,19 @@
                     </li>
                   <?php endforeach;?>
                     <li>
-                        <a class="text-center" href="<?php echo base_url().'admin/komentar'?>"> <strong>See all Comments</strong> <i class="fa fa-angle-right"></i> </a>
+                        <a class="text-center" href="<?php echo base_url().'admin/komentar'?>"> <strong>See all Comments</strong> <i class="fa fa-angle-right"></i></a>
                     </li>
                 </ul>
-                <!-- /.dropdown-messages -->
+            </li>
+            <li> 
+              <a class="waves-effect waves-light" href="<?php echo base_url().'admin/insight'?>"><i class="mdi mdi-telegram"></i>
+                <?php
+                  if ($artikel['publish_status']=='0')
+                    echo '<div class="notify"> <span class="heartbit"></span> <span class="point"></span></div>';
+                  else
+                    echo '<div class="notify"></div>'
+                ?>
+              </a>
             </li>
         </ul>
         <ul class="nav navbar-top-links navbar-right pull-right">
