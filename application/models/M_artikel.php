@@ -34,18 +34,18 @@
 
     //DEPAN//
 
-    function get_all_articles(){
-      $hsl=$this->db->query("SELECT tbl_artikel.*,DATE_FORMAT(artikel_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_artikel ORDER BY artikel_id DESC");
+    function get_all_articles_by_status_publish(){
+      $hsl=$this->db->query("SELECT tbl_artikel.*,DATE_FORMAT(artikel_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_artikel WHERE publish_status='1' ORDER BY artikel_id DESC ");
   		return $hsl;
     }
 
     function get_article_by_code($code){
-      $query = $this->db->query("SELECT tbl_artikel.*, DATE_FORMAT(artikel_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_artikel WHERE artikel_id='$code'");
+      $query = $this->db->query("SELECT tbl_artikel.*, DATE_FORMAT(artikel_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_artikel WHERE artikel_id='$code' && publish_status='1'");
       return $query;
     }
 
     function get_articles_perpage($offset,$limit){
-      $hsl=$this->db->query("SELECT tbl_artikel.*,DATE_FORMAT(artikel_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_artikel ORDER BY artikel_id DESC limit $offset,$limit");
+      $hsl=$this->db->query("SELECT tbl_artikel.*,DATE_FORMAT(artikel_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_artikel WHERE publish_status='1' ORDER BY artikel_id DESC limit $offset,$limit");
   		return $hsl;
     }
 
