@@ -30,13 +30,12 @@
           <li><a class="dropdown-item" href="<?php echo base_url('Sbbi/info_pg')?>">Play Group</a></li>
       </ul>
     </li>
-    <li class="dropdown <?php echo activate_menu('berita'); echo activate_menu('berita_boarding'); echo activate_menu('pengumuman'); echo activate_menu('insight_reading');?>">
+    <li class="dropdown <?php echo activate_menu('berita'); echo activate_menu('pengumuman'); echo activate_menu('insight_reading');?>">
       <a class="dropdown-toggle" href="#">
-        Berita
+        Info
       </a>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="<?php echo base_url('berita')?>">Berita Sekolah</a></li>
-        <li><a class="dropdown-item" href="<?php echo base_url('berita_boarding')?>">Berita Asrama</a></li>
+        <li><a class="dropdown-item" href="<?php echo base_url('berita')?>">Berita</a></li>
         <li><a class="dropdown-item" href="<?php echo base_url('pengumuman')?>">Pengumuman | Acara</a></li>
         <li><a class="dropdown-item" href="<?php echo base_url('insight_reading')?>">Insight reading</a></li>
       </ul>
