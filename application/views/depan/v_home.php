@@ -326,13 +326,13 @@
 							<div class="col-sm-6 col-lg-6">
 								<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="300">
 								<iframe width="420" height="320" src="https://www.youtube.com/embed/j2PQQxqsbY4" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<label>Profil Sekolah Bosowa Bina Insani Bogor</label>
+									<label><b>Profil Sekolah Bosowa Bina Insani Bogor</b></label>
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-6">
 								<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="600">
 								<iframe width="420" height="320" src="https://www.youtube.com/embed/BaAlsV_eYJQ" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<label>Ramah Tamah Anak SD Bosowa Bina Insani Bogor</label>
+									<label><b>Ramah Tamah Anak SD Bosowa Bina Insani Bogor</b></label>
 								</div>
 							</div>
 						</div>
