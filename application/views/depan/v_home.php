@@ -318,6 +318,25 @@
 					  </div>
 					</div>
 					</div>
+					
+					<hr class="tall">
+
+					<div class="container">
+						<div class="row counters">
+							<div class="col-sm-6 col-lg-6">
+								<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="300">
+								<iframe width="420" height="320" src="https://www.youtube.com/embed/j2PQQxqsbY4" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<label>Profil Sekolah Bosowa Bina Insani Bogor</label>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-6">
+								<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="600">
+								<iframe width="420" height="320" src="https://www.youtube.com/embed/BaAlsV_eYJQ" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<label>Ramah Tamah Anak SD Bosowa Bina Insani Bogor</label>
+								</div>
+							</div>
+						</div>
+					</div>
 
 					<hr class="tall">
 
@@ -342,17 +361,17 @@
 										<i style="color:#EE564B;" class="fa fa-exchange"></i>
 										<strong style="color:#EE564B;" data-to="<?php echo $hits['total'];?>">0</strong>
 										<label>Hits hari ini</label>
+									</div>
 								</div>
-							</div>
 								<div class="col-sm-6 col-lg-3">
 									<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="1200">
 										<i style="color:#EE564B;" class="fa fa-line-chart"></i>
 										<strong style="color:#EE564B;" data-to="<?php echo $lastyear['visitor_last_year'];?>">0</strong>
 										<label>Pengunjung Tahun Terakhir</label>
+									</div>
 								</div>
-							</div>
+						</div>
 					</div>
-				</div>
 
 			<?php $this->load->view('depan/v_footer')?>
 		</div>
