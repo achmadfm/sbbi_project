@@ -1,9 +1,3 @@
-<?php
-    $query=$this->db->query("SELECT * FROM tbl_inbox WHERE inbox_status='1'");
-    $query2=$this->db->query("SELECT * FROM tbl_komentar WHERE komentar_status='0'");
-    $jum_comment=$query2->num_rows();
-    $jum_pesan=$query->num_rows();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -123,12 +117,12 @@
                                 <table id="example23" class="display nowrap" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>No.</th>
+                                            <th>Sampul</th>
                                             <th>Agenda</th>
                                             <th>Tanggal</th>
                                             <th>Tempat</th>
                                             <th>Waktu</th>
-                                            <th>Author</th>
                                             <th style="text-align:right;">Aksi</th>
                                         </tr>
                                     </thead>
@@ -146,16 +140,17 @@
                                              $agenda_waktu=$i['agenda_waktu'];
                                              $agenda_keterangan=$i['agenda_keterangan'];
                                              $agenda_author=$i['agenda_author'];
+                                             $sampul=$i['sampul'];
                                              $tanggal=$i['tanggal'];
 
                                       ?>
                                         <tr>
-                                          <td><?php echo $tanggal;?></td>
+                                          <td><?php echo $no;?></td>
+                                          <td><img src="<?php echo base_url().'template/sampul/agenda/'.$sampul;;?>" class="img img-rounded" style="width:90px;"></td>
                                           <td><?php echo $agenda_nama;?></td>
                                           <td><?php echo $agenda_mulai.' s/d '.$agenda_selesai;?></td>
                                           <td><?php echo $agenda_tempat;?></td>
                                           <td><?php echo $agenda_waktu;?></td>
-                                          <td><?php echo $agenda_author;?></td>
                                           <td style="text-align:right;">
                                               <a class="btn btn-success btn-circle" data-toggle="modal" data-target="#ModalEdit<?php echo $agenda_id;?>"><span class="fa fa-pencil"></span></a>
                                               <a class="btn btn-danger btn-circle" data-toggle="modal" data-target="#ModalHapus<?php echo $agenda_id;?>"><span class="fa fa-trash"></span></a>
@@ -240,6 +235,13 @@
                                       </div>
                                   </div>
 
+                                  <div class="form-group">
+                                    <label for="inputUserName" class="col-sm-4 control-label">Sampul</label>
+                                    <div class="col-sm-7">
+                                        <input type="file" name="filefoto"/>
+                                    </div>
+                                </div>
+
                           </div>
                           <div class="modal-footer">
                               <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
@@ -260,6 +262,7 @@
             $agenda_waktu=$i['agenda_waktu'];
             $agenda_keterangan=$i['agenda_keterangan'];
             $agenda_author=$i['agenda_author'];
+            $sampul=$i['sampul'];
             $tangal=$i['tanggal'];
           ?>
 <!--Modal Edit Pengguna-->
@@ -335,6 +338,13 @@
                               </div>
                           </div>
 
+                          <div class="form-group">
+                              <label for="inputUserName" class="col-sm-4 control-label">Sampul</label>
+                              <div class="col-sm-7">
+                                  <input type="file" name="filefoto"/>
+                              </div>
+                          </div>
+
                           </div>
                           <div class="modal-footer">
                               <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
@@ -356,6 +366,7 @@
               $agenda_waktu=$i['agenda_waktu'];
               $agenda_keterangan=$i['agenda_keterangan'];
               $agenda_author=$i['agenda_author'];
+              $sampul = $i['sampul'];
               $tangal=$i['tanggal'];
             ?>
 	<!--Modal Hapus Pengguna-->
@@ -368,7 +379,8 @@
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'admin/agenda/hapus_agenda'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
-							<input type="hidden" name="kode" value="<?php echo $agenda_id;?>"/>
+							      <input type="hidden" name="kode" value="<?php echo $agenda_id;?>"/>
+                    <input type="hidden" value="<?php echo $sampul;?>" name="sampul">
                             <p>Apakah Anda yakin mau menghapus Agenda <b><?php echo $agenda_nama;?></b> ini?</p>
 
                     </div>
@@ -492,6 +504,10 @@
         <script type="text/javascript">
                 swal("Hooray!!","Agenda successful added","success")
         </script>
+    <?php elseif($this->session->flashdata('msg')=='warning'):?>
+      <script type="text/javascript">
+              swal("Careful!","your picture too large","warning")
+      </script>
     <?php elseif($this->session->flashdata('msg')=='info'):?>
         <script type="text/javascript">
                 swal("Hooray!!","Agenda successful updated","info")

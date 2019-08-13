@@ -5,14 +5,24 @@ class M_agenda extends CI_Model{
 		$hsl=$this->db->query("SELECT tbl_agenda.*,DATE_FORMAT(agenda_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_agenda ORDER BY agenda_id DESC");
 		return $hsl;
 	}
-	function simpan_agenda($nama_agenda,$deskripsi,$mulai,$selesai,$tempat,$waktu,$keterangan){
+	function simpan_agenda($nama_agenda,$deskripsi,$mulai,$selesai,$tempat,$waktu,$keterangan,$sampul){
 		$author=$this->session->userdata('nama');
-		$hsl=$this->db->query("INSERT INTO tbl_agenda(agenda_nama,agenda_deskripsi,agenda_mulai,agenda_selesai,agenda_tempat,agenda_waktu,agenda_keterangan,agenda_author) VALUES ('$nama_agenda','$deskripsi','$mulai','$selesai','$tempat','$waktu','$keterangan','$author')");
+		$hsl=$this->db->query("INSERT INTO tbl_agenda(agenda_nama,agenda_deskripsi,agenda_mulai,agenda_selesai,agenda_tempat,agenda_waktu,agenda_keterangan,agenda_author,sampul) VALUES ('$nama_agenda','$deskripsi','$mulai','$selesai','$tempat','$waktu','$keterangan','$author','$sampul')");
 		return $hsl;
 	}
-	function update_agenda($kode,$nama_agenda,$deskripsi,$mulai,$selesai,$tempat,$waktu,$keterangan){
+	function update_agenda($kode,$nama_agenda,$deskripsi,$mulai,$selesai,$tempat,$waktu,$keterangan,$sampul){
+		$author=$this->session->userdata('nama');
+		$hsl=$this->db->query("UPDATE tbl_agenda SET agenda_nama='$nama_agenda',agenda_deskripsi='$deskripsi',agenda_mulai='$mulai',agenda_selesai='$selesai',agenda_tempat='$tempat',agenda_waktu='$waktu',agenda_keterangan='$keterangan',agenda_author='$author',sampul='$sampul' where agenda_id='$kode'");
+		return $hsl;
+	}
+	function update_agenda_no_sampul($kode,$nama_agenda,$deskripsi,$mulai,$selesai,$tempat,$waktu,$keterangan){
 		$author=$this->session->userdata('nama');
 		$hsl=$this->db->query("UPDATE tbl_agenda SET agenda_nama='$nama_agenda',agenda_deskripsi='$deskripsi',agenda_mulai='$mulai',agenda_selesai='$selesai',agenda_tempat='$tempat',agenda_waktu='$waktu',agenda_keterangan='$keterangan',agenda_author='$author' where agenda_id='$kode'");
+		return $hsl;
+	}
+	function simpan_agenda_no_sampul($nama_agenda,$deskripsi,$mulai,$selesai,$tempat,$waktu,$keterangan){
+		$author=$this->session->userdata('nama');
+		$hsl=$this->db->query("INSERT INTO tbl_agenda(agenda_nama,agenda_deskripsi,agenda_mulai,agenda_selesai,agenda_tempat,agenda_waktu,agenda_keterangan,agenda_author) VALUES ('$nama_agenda','$deskripsi','$mulai','$selesai','$tempat','$waktu','$keterangan','$author')");
 		return $hsl;
 	}
 	function hapus_agenda($kode){

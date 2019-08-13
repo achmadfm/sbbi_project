@@ -127,12 +127,13 @@
 									<div class="timeline-body">
 										<?php
 											$d = $data->num_rows();
-											if(empty($d)) :
+											$a = $agenda->num_rows();
+											if(empty($d) && empty($a)) :
 										?>
 										<div class="timeline-date">
 											<h3 class="heading-primary">Data Tidak Ada</h3>
 										</div>
-									<?php else: ?>
+									    <?php else: ?>
 										<div class="timeline-date">
 											<h3 class="heading-primary">Pengumuman | Acara</h3>
 										</div>
@@ -187,31 +188,54 @@
 												 $agenda_waktu=$i['agenda_waktu'];
 												 $agenda_keterangan=$i['agenda_keterangan'];
 												 $agenda_author=$i['agenda_author'];
+												 $sampul=$i['sampul'];
 												 $tanggal=$i['tanggal'];
 
 											?>
 										<article class="timeline-box right post post-medium">
+											
 											<div class="row">
 												<div class="col-md-12">
 													<div class="post-content">
 														<h4 class="heading-primary"><a href="blog-post.html"><?php echo $agenda_nama;?> (Acara)</a></h4>
-														<p><?php echo $agenda_deskripsi;?></p>
 													</div>
 
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-md-12">
-													<div class="post-meta">
-														<span><i class="fa fa-calendar"></i><?php echo Pengumuman::format_tanggal($tanggal);?></span><br>
-														<span><i class="fa fa-clock-o"> Mulai Jam <?php echo $agenda_waktu;?></i></span>
+													<div class="post-image">
+														<div class="owl-carousel owl-theme" data-plugin-options="{'items':1}">
+															<div>
+																<div class="img-thumbnail d-block">
+																	<img class="img-fluid" src="<?php echo base_url().'template/sampul/agenda/'.$sampul;?>" alt="">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="post-content">
+														<p><?php echo $agenda_deskripsi;?></p> 
 													</div>
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-md-12">
 													<div class="post-meta">
-														<span><i class="fa fa-user"></i> By <a href="#"><?php echo $agenda_author;?></a> </span>
+														<span><i class="fa fa-calendar"></i> Posted : <?php echo Pengumuman::format_tanggal($tanggal);?></span><br>
+														<span><i class="fa fa-map-marker"></i> Lokasi : di <?php echo $agenda_tempat;?></span><br>
+														<span><i class="fa fa-calendar-check-o"></i> Tanggal Pelaksanaan : <?php echo Pengumuman::format_tanggal($agenda_mulai);?></span>
+														<span><i class="fa fa-clock-o"></i> Mulai Jam <?php echo $agenda_waktu;?></span>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="post-meta">
+														<span><i class="fa fa-user"></i> Postingan : <a href="#"><?php echo $agenda_author;?></a> </span>
 													</div>
 												</div>
 											</div>
