@@ -1,0 +1,1 @@
+<img alt="Porto" width="80" height="80" src="<?php echo base_url()?>template/logo_b.png">
