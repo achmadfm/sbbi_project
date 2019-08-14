@@ -64,6 +64,32 @@
 		?>
 	</head>
 	<body class="loading-overlay-showing" data-loading-overlay>
+	<!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+      <script>
+			window.fbAsyncInit = function() {
+			FB.init({
+				xfbml            : true,
+				version          : 'v4.0'
+			});
+			};
+
+			(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+	<!-- Your customer chat code -->
+		<div class="fb-customerchat"
+			attribution=setup_tool
+			page_id="215855235280329"
+			theme_color="#67b868"
+			logged_in_greeting="Halo. Ada yang bisa kami bantu?"
+			logged_out_greeting="Halo. Ada yang bisa kami bantu?">
+      	</div>
 		<div class="loading-overlay">
 			<div class="bounce-loader">
 				<div class="bounce1"></div>
@@ -258,20 +284,20 @@
 							<h4 class="text-uppercase">Acara</h4>
 							<ul class="list list-icons text-left">
 								<?php
-	                $no=0;
-	                foreach ($agenda->result_array() as $g) :
-	                   $no++;
-	                   $agenda_id=$g['agenda_id'];
-	                   $agenda_nama=$g['agenda_nama'];
-	                   $agenda_deskripsi=$g['agenda_deskripsi'];
-	                   $agenda_mulai=$g['agenda_mulai'];
-	                   $agenda_selesai=$g['agenda_selesai'];
-	                   $agenda_tempat=$g['agenda_tempat'];
-	                   $agenda_waktu=$g['agenda_waktu'];
-	                   $agenda_keterangan=$g['agenda_keterangan'];
-	                   $agenda_author=$g['agenda_author'];
-	                   $tanggal=$g['tanggal'];
-	              ?>
+									$no=0;
+									foreach ($agenda->result_array() as $g) :
+									$no++;
+									$agenda_id=$g['agenda_id'];
+									$agenda_nama=$g['agenda_nama'];
+									$agenda_deskripsi=$g['agenda_deskripsi'];
+									$agenda_mulai=$g['agenda_mulai'];
+									$agenda_selesai=$g['agenda_selesai'];
+									$agenda_tempat=$g['agenda_tempat'];
+									$agenda_waktu=$g['agenda_waktu'];
+									$agenda_keterangan=$g['agenda_keterangan'];
+									$agenda_author=$g['agenda_author'];
+									$tanggal=$g['tanggal'];
+								?>
 								<li>
 									<a href="<?php echo base_url().'agenda'?>"><img width="60" height="60" src="<?php echo base_url().'template/images/agenda.png'?>"  alt=" " /></a>
 									<br>
@@ -285,36 +311,19 @@
 
 						</div>
 					</div>
-				</div>
-
-
-						<div class="col-12">
-							<div class="col-lg-4">
-								<div class="featured-box featured-box-primary">
-									<div class="box-content">
-										<h4 class="text-uppercase">Galeri</h4>
-										<ul class="thumbnail-gallery" data-plugin-lightbox data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
-											<?php
-                                              foreach ($galeri->result_array() as $g) {
-                                                   $galeri_id=$g['galeri_id'];
-                                                   $galeri_judul=$g['galeri_judul'];
-                                                   $galeri_tanggal=$g['tanggal'];
-                                                   $galeri_author=$g['galeri_author'];
-                                                   $galeri_gambar=$g['galeri_gambar'];
-                                                   $galeri_album_id=$g['galeri_album_id'];
-                                                   $galeri_album_nama=$g['album_nama'];
-                                          	?>
-											<li>
-												<a href="<?php echo base_url().'template/galeri/'.$galeri_gambar;?>"><img width="100" height="100" src="<?php echo base_url().'template/galeri/'.$galeri_gambar;?>"  alt=""></a>
-												<h4><?php echo $galeri_judul;?></h4>
-												<em><?php echo 'Tanggal '.Home::format_tanggal($galeri_tanggal);;?></em>
-											</li>
-											<?php }?>
-										</ul>
+					<div class="col-lg-12">
+						<div class="featured-box featured-box-primary">
+							<div class="box-content">
+								<h4 class="text-uppercase">Galeri</h4>
+								<ul class="thumbnail-gallery" data-plugin-lightbox data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
+									<div id="instafeedhome">
 									</div>
-								</div>
+								</ul>
 							</div>
 						</div>
+					</div>
+				</div>
+
 					  </div>
 					</div>
 					</div>
@@ -400,18 +409,5 @@
 		<script src="<?php echo base_url()?>template/js/views/view.home.js"></script>
 
 		<script src="<?php echo base_url()?>template/js/theme.init.js"></script>
-		<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5d2eaa739b94cd38bbe7bdab/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
 	</body>
 </html>

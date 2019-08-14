@@ -51,6 +51,32 @@
 
 	</head>
 	<body class="loading-overlay-showing" data-loading-overlay>
+	<!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+      <script>
+			window.fbAsyncInit = function() {
+			FB.init({
+				xfbml            : true,
+				version          : 'v4.0'
+			});
+			};
+
+			(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+	<!-- Your customer chat code -->
+		<div class="fb-customerchat"
+			attribution=setup_tool
+			page_id="215855235280329"
+			theme_color="#67b868"
+			logged_in_greeting="Halo. Ada yang bisa kami bantu?"
+			logged_out_greeting="Halo. Ada yang bisa kami bantu?">
+      	</div>
 		<div class="loading-overlay">
 			<div class="bounce-loader">
 				<div class="bounce1"></div>
@@ -127,58 +153,28 @@
 
 					<div class="row">
 						<div class="col-md-12">
-
 							<ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter">
-								<li data-option-value="*" class="active"><a href="#">Lihat Semua</a></li>
-								<?php
-                  foreach ($alb->result_array() as $i) {
-                    $alb_id=$i['album_id'];
-                    $alb_nama=$i['album_nama'];
-
-                ?>
-								<li data-option-value=".<?php echo $alb_id?>"><a href="#"><?php echo $alb_nama;?></a></li>
-							<?php }?>
 							</ul>
-
-							<hr>
-
 							<div class="row">
-
+							
 								<div class="sort-destination-loader sort-destination-loader-showing">
 									<ul class="image-gallery sort-destination lightbox" data-sort-id="portfolio" data-plugin-options="{'delegate': 'a.lightbox-portfolio', 'type': 'image', 'gallery': {'enabled': true}}">
-										<?php
-                                          foreach ($all_galeri->result_array() as $a) {
-                                            $id=$a['galeri_album_id'];
-                                            $judul=$a['galeri_judul'];
-                    												$caption=$a['galeri_caption'];
-                                            $gambar=$a['galeri_gambar'];
-                    
-                                        ?>
-										<li class="col-md-3 col-sm-6 col-xs-12 isotope-item <?php echo $id;?>">
-											<div class="image-gallery-item">
-													<div class="image-gallery-item">
-														<span class="thumb-info thumb-info-hide-wrapper-bg">
-														<span class="thumb-info-wrapper">
-															<a href="<?php echo base_url().'template/galeri/'.$gambar?>" class="lightbox-portfolio">
-															<img src="<?php echo base_url().'template/galeri/'.$gambar?>" class="img-responsive" alt="">
-															</a>
-															<span class="thumb-info-title">
-																<span class="thumb-info-inner"><?php echo $judul;?></span>
-															</span>
-														</span>
-														<span class="thumb-info-caption">
-															<span class="thumb-info-caption-text"><?php echo $caption;?></span>
-														</span>
-													</span>
-													</div>
-											</div>
-										</li>
-									<?php }?>
+										
 									</ul>
+									
+									<h2><center>Our Gallery From Instagram</center></h2>
+									<div class="row">
+										<div id="instafeed">
+										
+										</div>
+									</div>
 								</div>
 							</div>
+							
 						</div>
 					</div>
+					<hr class="tall">
+					<center><a href="https://www.instagram.com/bosowabinainsani/" target="_blank" class="btn btn-primary">Click Here for More Photos</a></center>
 				</div>
 
 			<?php $this->load->view('depan/v_footer');?>
@@ -223,18 +219,5 @@
 			ga('send', 'pageview');
 		</script>
 		 -->
-		 <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5d2eaa739b94cd38bbe7bdab/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
 	</body>
 </html>
