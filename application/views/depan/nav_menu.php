@@ -30,7 +30,7 @@
           <li><a class="dropdown-item" href="<?php echo base_url('Sbbi/info_pg')?>">Play Group</a></li>
       </ul>
     </li>
-    <li class="dropdown <?php echo activate_menu('berita'); echo activate_menu('pengumuman'); echo activate_menu('insight_reading');?>">
+    <li class="dropdown <?php echo activate_menu('berita'); echo activate_menu('pengumuman'); echo activate_menu('insight_reading'); echo activate_menu('newsletter');?>">
       <a class="dropdown-toggle" href="#">
         Info
       </a>
@@ -38,6 +38,7 @@
         <li><a class="dropdown-item" href="<?php echo base_url('berita')?>">Berita</a></li>
         <li><a class="dropdown-item" href="<?php echo base_url('pengumuman')?>">Pengumuman | Acara</a></li>
         <li><a class="dropdown-item" href="<?php echo base_url('insight_reading')?>">Insight reading</a></li>
+        <li><a class="dropdown-item" href="<?php echo base_url('newsletter')?>">NewsLetter</a></li>
       </ul>
     </li>
     <li class="<?php echo activate_menu('prestasi_siswa');?>">
