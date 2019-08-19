@@ -60,7 +60,7 @@
                   <li> <a href="<?php echo base_url('admin/users')?>" class="waves-effect "><i class="mdi mdi-account fa-fw"></i> <span class="hide-menu">Users</span></a></li>
                   <li class="mega-nav"> <a href="<?php echo base_url('admin/agenda')?>" class="waves-effect"><i class="mdi mdi-format-color-fill fa-fw"></i> <span class="hide-menu">Agenda</span></a></li>
                   <li> <a href="<?php echo base_url('admin/pengumuman')?>" class="waves-effect"><i class="mdi mdi-volume-high fa-fw"></i> <span class="hide-menu">Pengumuman</span></a></li>
-                  <li> <a href="<?php echo base_url('admin/files')?>" class="waves-effect active"><i class="mdi mdi-cloud-download fa-fw"></i> <span class="hide-menu">Download</span></a></li>
+                  <li> <a href="<?php echo base_url('admin/files')?>" class="waves-effect active"><i class="mdi mdi-book-multiple fa-fw"></i> <span class="hide-menu">News Letter</span></a></li>
                   <li class="last-nav"><a href="#" class="waves-effect"><i class="mdi mdi-google-photos fa-fw"></i> <span class="hide-menu">Galeri<span class="fa arrow"></span></span></a>
                       <ul class="nav nav-second-level">
                           <li><a href="<?php echo base_url('admin/album')?>"><i class="mdi mdi-image-album fa-fw"></i><span class="hide-menu">Album</span></a></li>
@@ -103,10 +103,10 @@
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Download</h4> </div>
+                        <h4 class="page-title">News Letter</h4> </div>
                         <ol class="breadcrumb">
                             <li>Dashboard</li>
-                            <li class="active">Download</li>
+                            <li class="active">News Letter</li>
                         </ol>
                 </div>
                 <div class="row">
@@ -121,29 +121,26 @@
                                             <th>#</th>
                                             <th>File</th>
                                             <th>Tanggal</th>
-                                            <th>Oleh</th>
-                                            <th>Download</th>
+                                            <th>Jumlah Download</th>
                                             <th style="text-align:right;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                       <?php
-                            					$no=0;
-                              					foreach ($data->result_array() as $i) :
-                              					   $no++;
-                                           $id=$i['file_id'];
-                                           $judul=$i['file_judul'];
-                                           $deskripsi=$i['file_deskripsi'];
-                                           $oleh=$i['file_oleh'];
-                                           $tanggal=$i['tanggal'];
-                                           $download=$i['file_download'];
-                                           $file=$i['file_data'];
+                                        $no=0;
+                                        foreach ($data->result_array() as $i) :
+                                            $no++;
+                                            $id=$i['file_id'];
+                                            $judul=$i['file_judul'];
+                                            $deskripsi=$i['file_deskripsi'];
+                                            $tanggal=$i['tanggal'];
+                                            $download=$i['file_download'];
+                                            $file=$i['file_data'];
                                       ?>
                                         <tr>
                                           <td><?php echo $no;?></td>
                                           <td><a href="<?php echo base_url().'admin/files/download/'.$id;?>"><?php echo $judul;?></a></td>
                                           <td><?php echo $tanggal;?></td>
-                                          <td><?php echo $oleh;?></td>
                                           <td><?php echo $download;?></td>
                                           <td style="text-align:right;">
                                                 <a class="btn btn-success btn-circle" data-toggle="modal" data-target="#ModalEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
@@ -182,16 +179,10 @@
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label for="inputUserName" class="col-sm-4 control-label">Oleh</label>
-                                      <div class="col-sm-7">
-                                        <input type="text" name="xoleh" class="form-control" id="inputUserName" placeholder="Oleh" required>
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
                                       <label for="inputUserName" class="col-sm-4 control-label">File</label>
                                       <div class="col-sm-7">
                                         <input type="file" name="filefoto" required>
-                                        NB: file harus bertype pdf|doc|docx|ppt|pptx|zip. ukuran maksimal 2,7 MB.
+                                        NB: file harus bertype pdf|doc|docx|ppt|pptx|zip. ukuran maksimal 2,7 MB dan minimal 100 KB.
                                       </div>
                                   </div>
 
@@ -209,7 +200,6 @@
                       $id=$i['file_id'];
                       $judul=$i['file_judul'];
                       $deskripsi=$i['file_deskripsi'];
-                      $oleh=$i['file_oleh'];
                       $tanggal=$i['tanggal'];
                       $download=$i['file_download'];
                       $file=$i['file_data'];
@@ -240,12 +230,6 @@
                                           </div>
                                       </div>
                                       <div class="form-group">
-                                          <label for="inputUserName" class="col-sm-4 control-label">Oleh</label>
-                                          <div class="col-sm-7">
-                                            <input type="text" name="xoleh" class="form-control" value="<?php echo $oleh;?>" id="inputUserName" placeholder="Oleh" required>
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
                                           <label for="inputUserName" class="col-sm-4 control-label">File</label>
                                           <div class="col-sm-7">
                                             <input type="file" name="filefoto">
@@ -268,7 +252,6 @@
                     $id=$i['file_id'];
                     $judul=$i['file_judul'];
                     $deskripsi=$i['file_deskripsi'];
-                    $oleh=$i['file_oleh'];
                     $tanggal=$i['tanggal'];
                     $download=$i['file_download'];
                     $file=$i['file_data'];

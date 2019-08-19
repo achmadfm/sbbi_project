@@ -32,73 +32,69 @@ class Files extends CI_Controller{
 	}
 
 	function simpan_file(){
-				$config['upload_path'] = './template/files/'; //path folder
+		$config['upload_path'] = './template/files/'; //path folder
         $config['allowed_types'] = 'pdf|doc|docx|ppt|pptx|zip'; //type yang dapat diakses bisa anda sesuaikan
-        $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+        $config['encrypt_name'] = FALSE; //nama yang terupload nantinya
 
-	            $this->upload->initialize($config);
-	            if(!empty($_FILES['filefoto']['name']))
-	            {
-	                if ($this->upload->do_upload('filefoto'))
-	                {
-	                    $gbr = $this->upload->data();
-	                    $file=$gbr['file_name'];
-											$judul=strip_tags($this->input->post('xjudul'));
-											$deskripsi=$this->input->post('xdeskripsi');
-											$oleh=strip_tags($this->input->post('xoleh'));
+		$this->upload->initialize($config);
+		if(!empty($_FILES['filefoto']['name']))
+		{
+			if ($this->upload->do_upload('filefoto'))
+			{
+				$gbr = $this->upload->data();
+				$file=$gbr['file_name'];
+				$judul=strip_tags($this->input->post('xjudul'));
+				$deskripsi=$this->input->post('xdeskripsi');
+				$this->m_files->simpan_file($judul,$deskripsi,$file);
+				echo $this->session->set_flashdata('msg','success');
+				redirect('admin/files');
+			}else{
+				echo $this->session->set_flashdata('msg','warning');
+				redirect('admin/files');
+			}
 
-											$this->m_files->simpan_file($judul,$deskripsi,$oleh,$file);
-											echo $this->session->set_flashdata('msg','success');
-											redirect('admin/files');
-									}else{
-	                    echo $this->session->set_flashdata('msg','warning');
-	                    redirect('admin/files');
-	                }
-
-	            }else{
-					redirect('admin/files');
-				}
+		}else{
+			redirect('admin/files');
+		}
 	}
 
 	function update_file(){
 
-	            $config['upload_path'] = './template/files/'; //path folder
-	            $config['allowed_types'] = 'pdf|doc|docx|ppt|pptx|zip'; //type yang dapat diakses bisa anda sesuaikan
-	            $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+		$query = $this->db->query("SELECT * FROM tbl_files");
 
-	            $this->upload->initialize($config);
-	            if(!empty($_FILES['filefoto']['name']))
-	            {
-	                if ($this->upload->do_upload('filefoto'))
-	                {
-                    $gbr = $this->upload->data();
-                    $file=$gbr['file_name'];
-                    $kode=$this->input->post('kode');
-                    $judul=strip_tags($this->input->post('xjudul'));
-										$deskripsi=$this->input->post('xdeskripsi');
-										$oleh=strip_tags($this->input->post('xoleh'));
-										$data=$this->input->post('file');
-										$path='./template/files/'.$data;
-										unlink($path);
-										$this->m_files->update_file($kode,$judul,$deskripsi,$oleh,$file);
-										echo $this->session->set_flashdata('msg','info');
-										redirect('admin/files');
+		$config['upload_path'] = './template/files/'; //path folder
+		$config['allowed_types'] = 'pdf|doc|docx|ppt|pptx|zip'; //type yang dapat diakses bisa anda sesuaikan
+		$config['encrypt_name'] = FALSE; //nama yang terupload nantinya
 
-	                }else{
-	                    echo $this->session->set_flashdata('msg','warning');
-	                    redirect('admin/files');
-	                }
+		$this->upload->initialize($config);
+		if(!empty($_FILES['filefoto']['name']))
+		{
+			if ($this->upload->do_upload('filefoto')){
+				$gbr = $this->upload->data();
+				$file=$gbr['file_name'];
+				$kode=$this->input->post('kode');
+				$judul=strip_tags($this->input->post('xjudul'));
+				$deskripsi=$this->input->post('xdeskripsi');
+				$data=$this->input->post('file');
+				$path='./template/files/'.$data;
+				unlink($path);
+				$this->m_files->update_file($kode,$judul,$deskripsi,$file);
+				echo $this->session->set_flashdata('msg','info');
+				redirect('admin/files');
 
-	            }else{
-						$kode=$this->input->post('kode');
-	          $judul=strip_tags($this->input->post('xjudul'));
-						$deskripsi=$this->input->post('xdeskripsi');
-						$oleh=strip_tags($this->input->post('xoleh'));
-						$this->m_files->update_file_tanpa_file($kode,$judul,$deskripsi,$oleh);
-						echo $this->session->set_flashdata('msg','info');
-						redirect('admin/files');
-	            }
+			}else{
+				echo $this->session->set_flashdata('msg','warning');
+				redirect('admin/files');
+			}
 
+		}else{
+				$kode=$this->input->post('kode');
+				$judul=strip_tags($this->input->post('xjudul'));
+				$deskripsi=$this->input->post('xdeskripsi');
+				$this->m_files->update_file_tanpa_file($kode,$judul,$deskripsi);
+				echo $this->session->set_flashdata('msg','info');
+				redirect('admin/files');
+		}
 	}
 
 	function hapus_file(){
