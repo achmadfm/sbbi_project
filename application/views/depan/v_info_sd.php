@@ -229,22 +229,16 @@
 								</div>
 							</div>
 							<div class="col-lg-4">
-									<h4 class="font-weight-bold text-color-dark" align="center">Gallery</h4>
-									<div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'autoplay': true, 'loop': true, 'margin': 10, 'animateOut': 'fadeOut'}">
-										<?php
-											foreach($home->result_array() as $galeri):
-												$foto = $galeri['galeri_gambar'];
-										?>
-										<div>
-											<?php if(empty($foto)):?>
-											<img alt="" class="img-responsive" width="10px" height="10px" src="<?php echo base_url()?>template/img/projects/project-1.jpg">
-										<?php else: ?>
-											<img alt="" class="img-responsive" width="10px" height="10px" src="<?php echo base_url().'template/galeri/'.$foto;?>">
-										<?php endif;?>
-										</div>
-									<?php endforeach;?>
+								<div class="featured-box featured-box-primary">
+									<div class="box-content">
+										<h4 class="text-uppercase">Galeri Instagram</h4>
+										<ul class="thumbnail-gallery" data-plugin-lightbox data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}" id="instafeed">
+											
+										</ul>
+										<center><a class="btn btn-primary" href="https://www.instagram.com/bosowabinainsani/" target="_blank">Click Here for More Photos</a></center>
 									</div>
 								</div>
+							</div>
 
 							</div>
 				</div>
@@ -352,5 +346,7 @@
 		<!-- Theme Initialization Files -->
 		<script src="<?php echo base_url()?>template/js/theme.init.js"></script>
 		<script src="<?php echo base_url()?>template/js/examples/examples.gallery.js"></script>
+		<script src="<?php echo base_url()?>template/js/instagram/instafeed.min.js"></script>
+		<script src="<?php echo base_url()?>template/js/instagram/unit.js"></script>
 	</body>
 </html>
