@@ -316,40 +316,6 @@
 								</div>
 							</div>
 						</div>
-
-					<div class="col-lg-4">
-					<div class="featured-box featured-box-primary">
-						<div class="box-content">
-							<h4 class="text-uppercase">Acara</h4>
-							<ul class="list list-icons text-left">
-								<?php
-									$no=0;
-									foreach ($agenda->result_array() as $g) :
-									$no++;
-									$agenda_id=$g['agenda_id'];
-									$agenda_nama=$g['agenda_nama'];
-									$agenda_deskripsi=$g['agenda_deskripsi'];
-									$agenda_mulai=$g['agenda_mulai'];
-									$agenda_selesai=$g['agenda_selesai'];
-									$agenda_tempat=$g['agenda_tempat'];
-									$agenda_waktu=$g['agenda_waktu'];
-									$agenda_keterangan=$g['agenda_keterangan'];
-									$agenda_author=$g['agenda_author'];
-									$tanggal=$g['tanggal'];
-								?>
-								<li>
-									<a href="<?php echo base_url().'agenda'?>"><img width="60" height="60" src="<?php echo base_url().'template/images/agenda.png'?>"  alt=" " /></a>
-									<br>
-									<h6><strong><?php echo $agenda_nama;?></strong></h6>
-									<i class="fa fa-calendar-o"><strong> Tanggal <?php echo Home::format_tanggal($tanggal);?></strong></i><br>
-									<?php echo limit_words($agenda_deskripsi,10).'...'?>
-								</li>
-								<hr>
-							<?php endforeach;?>
-							</ul>
-
-						</div>
-					</div>
 					<div class="col-lg-4">
 						<div class="featured-box featured-box-primary">
 							<div class="box-content">
