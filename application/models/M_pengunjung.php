@@ -1,6 +1,6 @@
 <?php
 class M_pengunjung extends CI_Model{
-
+    
 	function statistik_pengujung(){
         $query = $this->db->query("SELECT DATE_FORMAT(pengunjung_tanggal,'%d') AS tgl,COUNT(pengunjung_ip) AS jumlah FROM tbl_pengunjung WHERE MONTH(pengunjung_tanggal)=MONTH(CURDATE()) GROUP BY DATE(pengunjung_tanggal)");
 
@@ -24,18 +24,20 @@ class M_pengunjung extends CI_Model{
     }
 
 		function get_hits(){
-			$query = $this->db->query("SELECT SUM(pengunjung_hits) as total FROM tbl_pengunjung WHERE pengunjung_tanggal='".date_default_timezone_set("Asia/Jakarta")."' GROUP BY pengunjung_tanggal");
+            date_default_timezone_set("Asia/Makassar");
+			$query = $this->db->query("SELECT SUM(pengunjung_hits) as total FROM tbl_pengunjung WHERE DATE(pengunjung_tanggal)=DATE(CURDATE())");
 			return $query;
 		}
 
 		function visitor_online(){
+            date_default_timezone_set("Asia/Makassar");
 			$bataswaktu = time() - 300;
-			$query = $this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_online > '$bataswaktu'");
+			$query = $this->db->query("SELECT * FROM tbl_pengunjung WHERE DATE(pengunjung_tanggal)=DATE(CURDATE()) && pengunjung_online > '$bataswaktu'");
 			return $query;
 		}
 
     function get_all_visitors(){
-        $hsl=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_tanggal='".date_default_timezone_set("Asia/Jakarta")."' GROUP BY pengunjung_ip");
+        $hsl=$this->db->query("SELECT * FROM tbl_pengunjung WHERE DATE(pengunjung_tanggal)=DATE(CURDATE()) GROUP BY pengunjung_ip");
         return $hsl;
     }
 
@@ -90,22 +92,20 @@ class M_pengunjung extends CI_Model{
         }else{
             $agent='Other';
         }
-				$tanggal = date_default_timezone_set("Asia/Jakarta");
+                date_default_timezone_set("Asia/Makassar");
 				$waktu = time();
-        $cek=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_ip='$user_ip' AND pengunjung_tanggal='$tanggal'");
+                $cek=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_ip='$user_ip' AND DATE(pengunjung_tanggal)=CURDATE()");
 				$row = $cek->row_array();
-        if($cek->num_rows() == 0){
-            $datadb = array('pengunjung_ip'=>$user_ip, 'pengunjung_tanggal'=>$tanggal, 'pengunjung_hits'=>'1', 'pengunjung_online'=>$waktu, 'pengunjung_perangkat'=>$agent);
-						$this->db->insert('tbl_pengunjung',$datadb);
-        }else{
+                if($cek->num_rows() == 0){
+                    $datadb = array('pengunjung_ip'=>$user_ip, 'pengunjung_hits'=>'1', 'pengunjung_online'=>$waktu, 'pengunjung_perangkat'=>$agent);
+                                $this->db->insert('tbl_pengunjung',$datadb);
+                }else{
 					$hits = $row['pengunjung_hits'] + 1;
 					$datadb = array('pengunjung_ip'=>$user_ip,
-    							'pengunjung_tanggal'=>$tanggal,
     							'pengunjung_hits'=>$hits,
     							'pengunjung_online'=>$waktu,
     							'pengunjung_perangkat'=>$agent);
-					$array = array('pengunjung_ip'=>$user_ip,
-												 'pengunjung_tanggal'=>$tanggal);
+					$array = array('pengunjung_ip'=>$user_ip,);
 					$this->db->where($array);
 					$this->db->update('tbl_pengunjung',$datadb);
 				}

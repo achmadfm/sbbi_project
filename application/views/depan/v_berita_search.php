@@ -152,21 +152,21 @@
 
 								<article class="post post-medium">
 									<div class="row">
-                    <?php
-                    $no=0;
-                    foreach ($data->result_array() as $i) :
-                       $no++;
-                       $tulisan_id=$i['tulisan_id'];
-                       $tulisan_judul=$i['tulisan_judul'];
-                       $tulisan_isi=$i['tulisan_isi'];
-                       $tulisan_tanggal=$i['tanggal'];
-                       $tulisan_author=$i['tulisan_author'];
-                       $tulisan_gambar=$i['tulisan_gambar'];
-                       $tulisan_views=$i['tulisan_views'];
-                       $kategori_id=$i['tulisan_kategori_id'];
-                       $kategori_nama=$i['tulisan_kategori_nama'];
+										<?php
+											$no=0;
+											foreach ($data->result_array() as $i) :
+											$no++;
+											$tulisan_id=$i['tulisan_id'];
+											$tulisan_judul=$i['tulisan_judul'];
+											$tulisan_isi=$i['tulisan_isi'];
+											$tulisan_tanggal=$i['tanggal'];
+											$tulisan_author=$i['tulisan_author'];
+											$tulisan_gambar=$i['tulisan_gambar'];
+											$tulisan_views=$i['tulisan_views'];
+											$kategori_id=$i['tulisan_kategori_id'];
+											$kategori_nama=$i['tulisan_kategori_nama'];
 
-                    ?>
+										?>
 										<div class="col-md-5">
 											<div class="post-image">
 												<div class="owl-carousel owl-theme" data-plugin-options="{'items':1}">
