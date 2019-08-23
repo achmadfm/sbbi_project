@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 
-		<title>News Letter | Bosowa Bina Insani Bogor</title>	
+		<title>E-Magazine | Bosowa Bina Insani Bogor</title>	
 
 		<meta name="keywords" content="Menyajikan Informasi Seputar Sekolah, Asrama dan Pendaftaran Siswa Baru" />
 		<meta name="description" content="Selamat Datang di Website Bosowa Bina Insani Bogor, adalah Website Profil yang memberikan layanan informasi seputar kegiatan Sekolah, Asrama dan Pendaftaran Siswa Baru" />
@@ -127,13 +127,13 @@
 								<ul class="breadcrumb">
 									<li><a href="#">Home</a></li>
 									<li><a href="#">Info</a></li>
-									<li class="active">News Letter</li>
+									<li class="active">E-Magazine</li>
 								</ul>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col">
-								<h1>News Letter</h1>
+								<h1>E-Magazine</h1>
 							</div>
 						</div>
 					</div>
@@ -149,7 +149,7 @@
 							<center>
 								<table>
 									<tr>
-										<td><h2>Data News Letter Belum Ada</h2></td>
+										<td><h2>Data E-Magazine Belum Ada</h2></td>
 									</tr>
 								</table>
 							</center>
