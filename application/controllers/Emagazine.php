@@ -1,5 +1,5 @@
 <?php
-class Newsletter extends CI_Controller{
+class Emagazine extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model('m_files');
@@ -15,7 +15,7 @@ class Newsletter extends CI_Controller{
 			$offset = $page;
 		endif;
 		$limit=2;
-		$config['base_url'] = base_url() . 'newsletter/index/';
+		$config['base_url'] = base_url() . 'emagazine/index/';
 		$config['total_rows'] = $jum->num_rows();
 		$config['per_page'] = $limit;
 		$config['uri_segment'] = 3;
@@ -41,7 +41,7 @@ class Newsletter extends CI_Controller{
 		$x['page'] =$this->pagination->create_links();
 		$x['files'] = $this->m_files->get_files_home();
 		$x['data'] = $this->m_files->get_files_perpage($offset,$limit);
-		$this->load->view('depan/v_newsletter',$x);
+		$this->load->view('depan/v_emagazine',$x);
 	}
 
 	function get_file(){
