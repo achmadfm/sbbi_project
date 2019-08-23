@@ -199,7 +199,7 @@
                                 <table class="table">
                                     <tbody>
                                       <?php
-                                          $query=$this->db->query("SELECT * FROM tbl_tulisan ORDER BY tulisan_views DESC");
+                                          $query=$this->db->query("SELECT * FROM tbl_tulisan ORDER BY tulisan_views DESC limit 5");
                                           foreach ($query->result_array() as $i) :
                                               $tulisan_id=$i['tulisan_id'];
                                               $tulisan_judul=$i['tulisan_judul'];
