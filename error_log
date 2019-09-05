@@ -46,3 +46,8 @@
 [23-Feb-2019 09:56:52 Asia/Jakarta] PHP Parse error:  syntax error, unexpected 'https' (T_STRING) in /home/bosowa12/public_html/www.bosowaschoolmakassar.sch.id/application/views/depan/v_beritadetail.php on line 76
 [23-Feb-2019 09:56:52 Asia/Jakarta] PHP Parse error:  syntax error, unexpected 'https' (T_STRING) in /home/bosowa12/public_html/www.bosowaschoolmakassar.sch.id/application/views/depan/v_beritadetail.php on line 76
 [17-Jul-2019 02:34:53 UTC] PHP Fatal error:  Call to undefined function timezone() in /home/bosowasc/public_html/binainsanibogor.bosowaschool.sch.id/application/models/M_pengunjung.php on line 27
+[23-Jul-2019 10:04:07 Asia/Jakarta] PHP Fatal error:  Call to undefined method M_web_admin::get_sejarah_by_id() in /home/bosowasc/public_html/bogor.bosowaschool.sch.id/application/controllers/Sejarah.php on line 13
+[23-Jul-2019 10:04:10 Asia/Jakarta] PHP Fatal error:  Call to undefined method M_web_admin::get_sejarah_by_id() in /home/bosowasc/public_html/bogor.bosowaschool.sch.id/application/controllers/Sejarah.php on line 13
+[23-Jul-2019 10:04:44 Asia/Jakarta] PHP Fatal error:  Call to undefined method M_web_admin::get_sejarah_by_id() in /home/bosowasc/public_html/bogor.bosowaschool.sch.id/application/controllers/Sejarah.php on line 13
+[23-Jul-2019 10:18:32 Asia/Jakarta] PHP Fatal error:  Call to undefined method M_web_admin::get_sejarah_by_id() in /home/bosowasc/public_html/bogor.bosowaschool.sch.id/application/controllers/Sejarah.php on line 13
+[01-Aug-2019 09:50:00 Asia/Jakarta] PHP Fatal error:  Call to undefined method M_artikel::get_all_articles_by_status_publish() in /home/bosowasc/public_html/bogor.bosowaschool.sch.id/application/controllers/Insight_reading.php on line 33

@@ -21,18 +21,8 @@
       return $query;
     }
 
-    function get_sejarah_by_id($id){
-      $query = $this->db->query("SELECT * FROM tbl_sejarah WHERE id_sejarah='$id'");
-      return $query;
-    }
-
     function update_sejarah($isi){
       $query = $this->db->query("UPDATE tbl_sejarah SET isi_sejarah='$isi' WHERE id_sejarah='1'");
-      return $query;
-    }
-
-    function update_sejarah_sab($isi){
-      $query = $this->db->query("UPDATE tbl_sejarah SET isi_sejarah='$isi' WHERE id_sejarah='2'");
       return $query;
     }
 

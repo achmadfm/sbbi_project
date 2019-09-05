@@ -14,11 +14,11 @@
     	 
     	<?php 
     	   
-    	if ($this->uri->segment(1)=='news'){ 
-    	    $rows = $this->m_tulisan->view_where('tbl_tulisan',array('tulisan_slug' => $this->uri->segment(2)))->row_array();
+    	if ($this->uri->segment(2)=='news'){ 
+    	    $rows = $this->m_tulisan->view_where('tbl_tulisan',array('tulisan_slug' => $this->uri->segment(3)))->row_array();
 	    echo '<meta property="og:title" content="'.$title.'" />
 			 <meta property="og:type" content="article" />
-			 <meta property="og:url" content="'.base_url().''.$this->uri->segment(2).'" />
+			 <meta property="og:url" content="'.base_url().''.$this->uri->segment(3).'" />
 			 <meta property="og:image" content="'.base_url().'template/cover/'.$rows['tulisan_gambar'].'" /> 
 			 <meta property="og:description" content="'.$deskripsi.'"/>';
 	    } ?>

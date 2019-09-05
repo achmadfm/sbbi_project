@@ -12,16 +12,13 @@
    }
 
    function index(){
-     $id = 2;
      $x['unit'] = $this->M_web_admin->get_unit();
      $x['tentang'] = $this->M_web_admin->get_tentang();
      $x['status'] = $this->m_status->get_all_status();
      $x['speech'] = $this->M_web_admin->get_speech();
-     $x['speechsab'] = $this->M_web_admin->get_speech_by_id($id);
      $x['fasilitas'] = $this->M_web_admin->get_fasilitas();
      $x['program'] = $this->M_web_admin->get_program();
      $x['sejarah'] = $this->M_web_admin->get_sejarah();
-     $x['sejarahsab'] = $this->M_web_admin->get_sejarah_by_id($id);
      $x['testi'] = $this->M_web_admin->get_testimoni();
      $this->load->view('admin/v_webadmin',$x);
    }
@@ -30,13 +27,6 @@
      $isi=$this->input->post('isis');
      $this->M_web_admin->update_sejarah($isi);
      echo $this->session->set_flashdata('msg','successs');
-     redirect('admin/web_admin');
-   }
-
-   function up_sejarah_sab(){
-     $isi=$this->input->post('isisab');
-     $this->M_web_admin->update_sejarah_sab($isi);
-     echo $this->session->set_flashdata('msg','successab');
      redirect('admin/web_admin');
    }
 
@@ -89,45 +79,6 @@
      }
    }
 
-   function update_sambutan_sab(){
-     $config['upload_path'] = './template/speech/'; //path folder
-     $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-     $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
-
-     $this->upload->initialize($config);
-     if(!empty($_FILES['filefoto']['name'])) {
-       if($this->upload->do_upload('filefoto')) {
-         $gbr=$this->upload->data();
-         $config['image_library']='gd2';
-         $config['source_image']='./template/speech/'.$gbr['file_name'];
-         $config['create_thumb']=FALSE;
-         $config['maintain_ratio']=FALSE;
-         $config['quality']='100%';
-         $config['width']=260;
-         $config['height']=370;
-         $config['new_image']='./template/speech/'.$gbr['file_name'];
-         $this->load->library('image_lib',$config);
-         $this->image_lib->resize();
-         $foto=$gbr['file_name'];
-         $id_speech = $this->input->post('xkode');
-         $nama = $this->input->post('kepsek');
-         $isi = $this->input->post('sambutan');
-         $this->M_web_admin->up_sambutan($id_speech,$nama,$isi,$foto);
-         echo $this->session->set_flashdata('msg','info');
-         redirect('admin/web_admin');
-       }else{
-         echo $this->session->set_flashdata('msg','error');
-         redirect('admin/web_admin');
-       }
-     }else{
-       $id_speech = $this->input->post('xkode');
-       $nama = $this->input->post('kepsek');
-       $isi = $this->input->post('sambutan');
-       $this->M_web_admin->up_sambutan_no_gambar($id_speech,$nama,$isi);
-       echo $this->session->set_flashdata('msg','info2');
-       redirect('admin/web_admin');
-     }
-   }
 
    function simpan_fasilitas(){
      $config['upload_path'] = './template/fasilitas/'; //path folder

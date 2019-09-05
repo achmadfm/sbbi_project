@@ -8,9 +8,7 @@
     }
 
     function index(){
-      $id = 2;
       $x['sejarah'] = $this->M_web_admin->get_sejarah();
-      $x['sejarahsab'] = $this->M_web_admin->get_sejarah_by_id($id);
       $this->load->view('depan/v_sejarah',$x);
     }
   }
