@@ -272,7 +272,7 @@
 										<?php endif;?>
 										</div>
 										<div class="col-12 col-sm-12 col-lg-10">
-											<div class="testimonial custom-testimonial-style-1 testimonial-with-quotes mb-0">
+											<div class="testimonial testimonial-primary mb-0">
 												<blockquote class="pb-2">
 													<p><?php echo $isi;?></p>
 												</blockquote>
