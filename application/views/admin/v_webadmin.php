@@ -173,60 +173,7 @@
                             </form>
                         </div>
                     </div>
-
-
-                    <div class="col-sm-6">
-                      <div class="white-box">
-                          <h3 class="box-title m-b-0">Bosowa Bina Insani Bogor Welcome Speech</h3>
-                          <p class="text-muted m-b-30 font-13"> (Form ini untuk mengedit kata sambutan kepala sekolah) </p>
-                          <?php $s = $speech->row_array();?>
-                            <div class="form-group">
-                              <label class="col-md-12">Foto (saat ini)</label>
-                                <div class="row">
-                                  <div class="col-lg-6">
-                                    <div class="form-group">
-                                      <input type="hidden" name="xkode" value="<?php echo $s['id_sambutan'];?>">
-                                      <img height="370px" width="260px" src="<?php echo base_url().'template/speech/'.$s['foto_sambutan'];?>" class="img img-rounded" disabled>
-                                      <center><h3 class="box-title"><?php echo $s['nama_kepsek']?></h3> <small>Principal Bosowa Bina Insani Bogor</small></center>
-                                      <br/>
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label class="col-md-12">Isi Welcome Speech (Saat ini)</label>
-                                        <div class="col-md-12">
-                                            <textarea class="form-control" rows="5" disabled><?php echo $s['isi_sambutan'];?></textarea>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-
-                            <?php echo form_open_multipart('admin/web_admin/update_sambutan');?>
-                            <div class="form-horizontal">
-                              <div class="form-group">
-                                  <label class="col-md-12">Isi Welcome Speech</label>
-                                  <div class="col-md-12">
-                                      <input type="hidden" name="xkode" value="<?php echo $s['id_sambutan'];?>">
-                                      <textarea id="mymce" rows="5" name="sambutan"><?php echo $s['isi_sambutan'];?></textarea>
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                    <label class="col-md-12">Nama Kepala Sekolah</label>
-                                    <div class="col-md-12">
-                                        <input type="text" name="kepsek" class="form-control" value="<?php echo $s['nama_kepsek']?>">
-                                      </div>
-                                </div>
-                              <div class="form-group">
-                                <label class="col-sm-12">File upload</label>
-                                  <div class="col-sm-12">
-                                      <input type="file" name="filefoto" >
-                                  </div>
-                              </div>
-                              <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Update</button>
-                            </div>
-                            <?php echo form_close();?>
-                      </div>
-                    </div>
+                <?php $this->load->view("admin/tab_sambutan");?>
                 </div>
             </div>
                 <!-- /.row -->

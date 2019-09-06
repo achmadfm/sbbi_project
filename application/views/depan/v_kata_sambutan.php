@@ -132,7 +132,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<h1>Sambutan Kepala Sekolah</h1>
+								<h1>Sambutan-sambutan Kepala Sekolah</h1>
 							</div>
 						</div>
 					</div>
@@ -141,7 +141,7 @@
 					<div class="container">
 						<div class="col-md-12">
 							<?php $s = $speech->row_array();?>
-							<h2>Sambutan Kepala Sekolah Bosowa Bina Insani Bogor</h2>
+							<h2>Sambutan Kepala TK-KB Sekolah Bosowa Bina Insani Bogor</h2>
 							<div class="sticky-container">
 								<div class="row">
 									<div class="col-md-8">
@@ -153,6 +153,68 @@
 											<strong>(Kepala Sekolah | <?php echo $s['nama_kepsek'];?>)</strong>
 										</div>
 									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<hr class="tall">
+
+					<div class="container">
+						<div class="col-md-12">
+							<?php $s = $speechsd->row_array();?>
+							<h2 align="right">Sambutan Kepala Sekolah SD Bosowa Bina Insani Bogor</h2>
+							<div class="row">
+								<div class="col-lg-4">
+									<aside class="sidebar" data-plugin-sticky data-plugin-options="{'minWidth': 991, 'containerSelector': '.container', 'padding': {'top': 110}}">
+										<img class="pull-left img-responsive" width="300" height="211" src="<?php echo base_url().'template/speech/'.$s['foto_sambutan'];?>" alt="">
+										<strong>(Kepala Sekolah | <?php echo $s['nama_kepsek'];?>)</strong>
+									</aside>
+								</div>
+								<div class="col-lg-8">
+									<p align="justify"><?php echo $s['isi_sambutan'];?></p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<hr class="tall">
+					
+					<div class="container">
+						<div class="col-md-12">
+							<?php $s = $speechsmp->row_array();?>
+							<h2>Sambutan Kepala Sekolah SMP Bosowa Bina Insani Bogor</h2>
+							<div class="sticky-container">
+								<div class="row">
+									<div class="col-md-8">
+										<p align="justify"><?php echo $s['isi_sambutan'];?></p>
+									</div>
+									<div class="col-md-4">
+										<div class="center" data-plugin-sticky data-plugin-options="{'minWidth': 991, 'containerSelector': '.sticky-container', 'padding': {'top': 110}}">
+											<img class="pull-right img-responsive" width="300" height="211" src="<?php echo base_url().'template/speech/'.$s['foto_sambutan'];?>" alt="">
+											<strong>(Kepala Sekolah | <?php echo $s['nama_kepsek'];?>)</strong>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<hr class="tall">
+
+					<div class="container">
+						<div class="col-md-12">
+							<?php $s = $speechsma->row_array();?>
+							<h2 align="right">Sambutan Kepala Sekolah SMA Bosowa Bina Insani Bogor</h2>
+							<div class="row">
+								<div class="col-lg-4">
+									<aside class="sidebar" data-plugin-sticky data-plugin-options="{'minWidth': 991, 'containerSelector': '.container', 'padding': {'top': 110}}">
+										<img class="pull-left img-responsive" width="300" height="211" src="<?php echo base_url().'template/speech/'.$s['foto_sambutan'];?>" alt="">
+										<strong>(Kepala Sekolah | <?php echo $s['nama_kepsek'];?>)</strong>
+									</aside>
+								</div>
+								<div class="col-lg-8">
+									<p align="justify"><?php echo $s['isi_sambutan'];?></p>
 								</div>
 							</div>
 						</div>
