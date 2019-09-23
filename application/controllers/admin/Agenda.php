@@ -65,15 +65,6 @@ class Agenda extends CI_Controller{
 	}
 
 	function update_agenda(){
-
-		$query = $this->db->query("SELECT * FROM tbl_agenda");
-		$agenda = $query->row_array();
-		$id = $agenda['agenda_id'];
-		$query2 = $this->db->query("SELECT * FROM tbl_agenda WHERE agenda_id='$id'");
-		$sampullama = $query2->row_array();
-		$path='./template/sampul/agenda/'.$sampullama['sampul'];
-		unlink($path);
-
 		$config['upload_path'] = './template/sampul/agenda/'; //path folder
 		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 		$config['encrypt_name'] = TRUE; //nama yang terupload nantinya
@@ -93,6 +84,9 @@ class Agenda extends CI_Controller{
 				$config['new_image']= './template/sampul/agenda/'.$gbr['file_name'];
 				$this->load->library('image_lib', $config);
 				$this->image_lib->resize();
+				$gambar=$this->input->post('gambar');
+				$path='../template/sampul/agenda/'.$gambar;
+				unlink($path);
 
 				$sampul = $gbr['file_name'];
 				$kode=strip_tags($this->input->post('kode'));

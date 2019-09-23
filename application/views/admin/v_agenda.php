@@ -280,6 +280,7 @@
                               <label for="inputUserName" class="col-sm-4 control-label">Nama Agenda</label>
                               <div class="col-sm-7">
                                 <input type="hidden" name="kode" value="<?php echo $agenda_id;?>">
+                                <input type="hidden" value="<?php echo $sampul;?>" name="gambar">
                                 <input type="text" name="xnama_agenda" class="form-control" value="<?php echo $agenda_nama;?>" id="inputUserName" placeholder="Nama Agenda" required>
                               </div>
                           </div>
