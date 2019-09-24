@@ -251,9 +251,9 @@
 											<div class="row">
 												<div class="col-md-12">
 													<div class="post-meta">
-														<span><i class="fa fa-calendar"></i> Posted : <?php echo Pengumuman::format_tanggal($tanggal);?></span><br>
 														<span><i class="fa fa-map-marker"></i> Lokasi : di <?php echo $agenda_tempat;?></span><br>
-														<span><i class="fa fa-calendar-check-o"></i> Tanggal Pelaksanaan : <?php echo Pengumuman::format_tanggal($agenda_mulai);?></span>
+														<span><i class="fa fa-calendar"></i> Tanggal Pelaksanaan : <?php echo Pengumuman::format_tanggal($agenda_mulai);?></span>
+														<span><i class="fa fa-calendar-check-o"></i> Tanggal Selesai : <?php echo Pengumuman::format_tanggal($agenda_selesai);?></span>
 														<span><i class="fa fa-clock-o"></i> Mulai Jam <?php echo $agenda_waktu;?></span>
 													</div>
 												</div>
