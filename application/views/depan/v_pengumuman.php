@@ -223,7 +223,7 @@
 											<div class="row">
 												<div class="col-md-12">
 													<div class="post-content">
-														<h4 class="heading-primary"><a href="blog-post.html"><?php echo $agenda_nama;?> (Acara)</a></h4>
+														<h4 class="heading-primary"><a href="#"><?php echo $agenda_nama;?> (Acara)</a></h4>
 													</div>
 
 												</div>
