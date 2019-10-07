@@ -202,9 +202,9 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="call-to-action-content align-left pb-md mb-xl ml-none">
-										<h2 class="text-color-light mb-none">Pendaftaran Siswa Baru <br> Bosowa Bina Insani Bogor <strong>Telah DiBuka</strong></h2>
+										<h2 class="text-color-light mb-none">Pendaftaran Siswa Baru <br> Bosowa Bina Insani Bogor untuk sementara <strong>Belum DiBuka</strong></h2>
 										<br>
-										 <a href="http://bit.ly/Register_BSM" target="_blank" class="btn btn-md btn-primary">Daftar? Klik disini!</a>
+									<!--	 <a href="http://bit.ly/Register_BSM" target="_blank" class="btn btn-md btn-primary">Daftar? Klik disini!</a> -->
 									</div>
 								</div>
 							</div>
