@@ -191,7 +191,7 @@
 							<ul class="list list-icons list-icons-style-3 mt-xlg">
 								<li><i class="fa fa-map-marker"></i> <strong>Alamat:</strong> Jl. Seremped Wetan, Sukadamai, Kec. Tanah Sereal, Kota Bogor, Jawa Barat 16164</li>
 								<li><i class="fa fa-phone"></i> <strong>Contact Person 1:</strong> 081296631779 (Ms. Yulia)</li>
-								<li><i class="fa fa-phone"></i> <strong>Contact Person 2:</strong> 08514196761 (Ms. Alis)</li>
+								<li><i class="fa fa-phone"></i> <strong>Contact Person 2:</strong> 081514196761 (Ms. Alis)</li>
 								<li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="#">yayasanbosowabinainsani@gmail.com</a></li>
 							</ul>
 

@@ -22,7 +22,7 @@
 			<div class="col-lg-4">
 				<h5 class="mb-2">Call Us / Contact Persons</h5>
 				<span class="phone">081296631779 (Ms. Yulia)</span>
-				<span class="phone">08514196761 (Ms. Alis)</span>
+				<span class="phone">081514196761 (Ms. Alis)</span>
 				<ul class="list list-icons list-icons-sm">
 					<li><i class="fa fa-envelope"></i> <a href="#">yayasanbosowabinainsani@gmail.com</a></li>
 				</ul>
