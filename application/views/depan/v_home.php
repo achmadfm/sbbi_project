@@ -193,6 +193,12 @@
 						    <a class="btn btn-primary btn-lg round" href="<?php echo base_url('Sbbi/info_pg')?>">Play Group</a>
 					</center>	
 				</div>
+				
+				<hr class="tall">
+
+				<div class="center">
+					<img src="<?php echo base_url()?>template/keunggulan_sbbi.jpg" width="1366px" alt="" />
+				</div>
 
                 <hr class="tall">
                 
