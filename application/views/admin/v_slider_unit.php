@@ -156,13 +156,8 @@
                   <div class="col-sm-12">
                       <div class="white-box">
                           <h3 class="box-title m-b-0">Data Tentang Unit</h3>
-                          <?php
-                            if($tentang->row_array()>=5):
-                          ?>
-                          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addModal1" disabled><span class="fa fa-plus fa-fw"></span>Tambah Tentang</button>
-                          <?php else: ?>
                           <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addModal1"><span class="fa fa-plus fa-fw"></span>Tambah Tentang</button>
-                          <?php endif;?>
+                          
                           <hr>
                           <div class="table-responsive">
                               <table id="example25" class="display wrap" cellspacing="0" width="100%">
