@@ -18,6 +18,8 @@
     }
 
     function info_sma(){
+      $id = 1;
+      $x['penjelasansma'] = $this->m_web_admin->get_penjelasan_by_id($id);
       $x['home']=$this->m_galeri->get_galeri_home();
       $x['guru'] = $this->m_guru->get_all_guru_sma();
       $x['units'] = $this->m_slider->get_opsi_pendidikan();
@@ -28,6 +30,8 @@
     }
 
     function info_smp(){
+      $id = 2;
+      $x['penjelasansmp'] = $this->m_web_admin->get_penjelasan_by_id($id);
       $x['home']=$this->m_galeri->get_galeri_home();
       $x['guru'] = $this->m_guru->get_all_guru_smp();
       $x['units'] = $this->m_slider->get_opsi_pendidikan();
@@ -38,6 +42,8 @@
     }
 
     function info_sd(){
+      $id = 3;
+      $x['penjelasansd'] = $this->m_web_admin->get_penjelasan_by_id($id);
       $x['home']=$this->m_galeri->get_galeri_home();
       $x['guru'] = $this->m_guru->get_all_guru_sd();
       $x['units'] = $this->m_slider->get_opsi_pendidikan();
@@ -47,7 +53,9 @@
       $this->load->view("depan/v_info_sd",$x);
     }
 
-    function info_tk(){
+    function info_tk_pg(){
+      $id = 4;
+      $x['penjelasantkpg'] = $this->m_web_admin->get_penjelasan_by_id($id);
       $x['home']=$this->m_galeri->get_galeri_home();
       $x['guru'] = $this->m_guru->get_all_guru_tk();
       $x['units'] = $this->m_slider->get_opsi_pendidikan();
@@ -55,15 +63,5 @@
       $x['tentang'] = $this->m_slider->get_tentang_unit_tk();
       $x['testi'] = $this->m_web_admin->get_testimoni();
       $this->load->view("depan/v_info_tk",$x);
-    }
-
-    function info_pg(){
-      $x['home']=$this->m_galeri->get_galeri_home();
-      $x['guru'] = $this->m_guru->get_all_guru_pg();
-      $x['units'] = $this->m_slider->get_opsi_pendidikan();
-      $x['slider'] = $this->m_slider->get_slider_pendidikan();
-      $x['tentang'] = $this->m_slider->get_tentang_unit_pg();
-      $x['testi'] = $this->m_web_admin->get_testimoni();
-      $this->load->view("depan/v_info_pg",$x);
     }
   }

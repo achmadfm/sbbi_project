@@ -12,9 +12,11 @@
    }
 
    function index(){
+     $id1 = 1;
      $id2 = 2;
      $id3 = 3;
      $id4 = 4;
+     $id5 = 5;
      $x['unit'] = $this->M_web_admin->get_unit();
      $x['tentang'] = $this->M_web_admin->get_tentang();
      $x['status'] = $this->m_status->get_all_status();
@@ -570,5 +572,9 @@
      $this->M_web_admin->hapus_testimoni($idt);
  		 echo $this->session->set_flashdata('msg','success-hapus3');
  		 redirect('admin/web_admin');
+   }
+
+   function update_penjelasansatu(){
+
    }
  }

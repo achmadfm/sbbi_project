@@ -176,105 +176,105 @@
                 <?php $this->load->view("admin/tab_sambutan");?>
                 </div>
             </div>
-                <!-- /.row -->
-                <!-- .row -->
-                <div class="row">
-                  <div class="col-sm-12">
-                      <div class="white-box">
-                          <h3 class="box-title m-b-0">Data Fasilitas</h3>
-                          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addfasilitas"><span class="fa fa-plus fa-fw"></span>Tambah Fasilitas</button>
-                          <hr>
-                          <div class="table-responsive">
-                              <table id="example23" class="display wrap" cellspacing="0" width="100%">
-                                  <thead>
-                                      <tr>
-                                          <th>Photo</th>
-                                          <th>Nama Fasilitas</th>
-                                          <th>Deskripsi</th>
-                                          <th>Unit Sekolah</th>
-                                          <th>Author</th>
-                                          <th style="text-align:right;">Aksi</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                    <?php
-                                      $no=0;
-                                      foreach($fasilitas->result_array() as $i):
-                                        $no++;
-                                        $id=$i['id_fasilitas'];
-                                        $nama=$i['nama_fasilitas'];
-                                        $deskripsi=$i['deskripsi'];
-                                        $id_unit=$i['id_unit'];
-                                        $unit=$i['unit_sekolah'];
-                                        $id_user=$i['id_author'];
-                                        $user=$i['nama_author'];
-                                        $foto=$i['foto_fasilitas'];
-                                    ?>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="white-box">
+                        <h3 class="box-title m-b-0">Data Fasilitas</h3>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addfasilitas"><span class="fa fa-plus fa-fw"></span>Tambah Fasilitas</button>
+                        <hr>
+                        <div class="table-responsive">
+                            <table id="example23" class="display wrap" cellspacing="0" width="100%">
+                                <thead>
                                     <tr>
-                                      <td><img src="<?php echo base_url().'template/fasilitas/'.$foto;?>" class="img img-rounded" style="width:200px; height:100px;"></td>
-                                      <td><?php echo $nama;?></td>
-                                      <td><?php echo $deskripsi;?></td>
-                                      <td><?php echo $unit;?></td>
-                                      <td><?php echo $user;?></td>
-                                      <td style="text-align:right;">
-                                            <a class="btn btn-success btn-circle" data-toggle="modal" data-target="#FEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
-                                            <a class="btn btn-danger btn-circle" data-toggle="modal" data-target="#FHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
-                                      </td>
+                                        <th>Photo</th>
+                                        <th>Nama Fasilitas</th>
+                                        <th>Deskripsi</th>
+                                        <th>Unit Sekolah</th>
+                                        <th>Author</th>
+                                        <th style="text-align:right;">Aksi</th>
                                     </tr>
-                                  <?php endforeach;?>
-                                  </tbody>
-                              </table>
-                          </div>
-                      </div>
+                                </thead>
+                                <tbody>
+                                <?php
+                                    $no=0;
+                                    foreach($fasilitas->result_array() as $i):
+                                    $no++;
+                                    $id=$i['id_fasilitas'];
+                                    $nama=$i['nama_fasilitas'];
+                                    $deskripsi=$i['deskripsi'];
+                                    $id_unit=$i['id_unit'];
+                                    $unit=$i['unit_sekolah'];
+                                    $id_user=$i['id_author'];
+                                    $user=$i['nama_author'];
+                                    $foto=$i['foto_fasilitas'];
+                                ?>
+                                <tr>
+                                    <td><img src="<?php echo base_url().'template/fasilitas/'.$foto;?>" class="img img-rounded" style="width:200px; height:100px;"></td>
+                                    <td><?php echo $nama;?></td>
+                                    <td><?php echo $deskripsi;?></td>
+                                    <td><?php echo $unit;?></td>
+                                    <td><?php echo $user;?></td>
+                                    <td style="text-align:right;">
+                                        <a class="btn btn-success btn-circle" data-toggle="modal" data-target="#FEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
+                                        <a class="btn btn-danger btn-circle" data-toggle="modal" data-target="#FHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
+                                    </td>
+                                </tr>
+                                <?php endforeach;?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                   </div>
                 </div>
                 <!-- /.row -->
                 <!-- .row -->
                 <div class="row">
-                  <div class="col-sm-12">
-                      <div class="white-box">
-                          <h3 class="box-title m-b-0">Data Program Sekolah</h3>
-                          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addprogram"><span class="fa fa-plus fa-fw"></span>Tambah Program</button>
-                          <hr>
-                          <div class="table-responsive">
-                              <table id="example24" class="display wrap" cellspacing="0" width="100%">
-                                  <thead>
-                                      <tr>
-                                          <th>Photo</th>
-                                          <th>Nama Program</th>
-                                          <th>Deskrkipsi</th>
-                                          <th>Unit Sekolah</th>
-                                          <th>Author</th>
-                                          <th>Aksi</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                    <?php foreach($program->result_array() as $prog) :
-                                      $idp = $prog['id_program'];
-                                      $namaprogram = $prog['nama_program'];
-                                      $deskripsip = $prog['deskripsi'];
-                                      $unitsekolah = $prog['unit_sekolah'];
-                                      $idu = $prog['id_author'];
-                                      $namau = $prog['nama_author'];
-                                      $fotop = $prog['foto_program'];
-                                    ?>
-                                      <tr>
-                                        <td><img src="<?php echo base_url().'template/program/'.$fotop;?>" class="img img-rounded" style="width:200px; height:100px;"></td>
-                                        <td><?php echo $namaprogram;?></td>
-                                        <td><?php echo $deskripsip;?></td>
-                                        <td><?php echo $unitsekolah;?></td>
-                                        <td><?php echo $namau;?></td>
-                                        <td style="text-align:right;">
-                                              <a class="btn btn-success btn-circle" data-toggle="modal" data-target="#PEdit<?php echo $idp;?>"><span class="fa fa-pencil"></span></a>
-                                              <a class="btn btn-danger btn-circle" data-toggle="modal" data-target="#PHapus<?php echo $idp;?>"><span class="fa fa-trash"></span></a>
-                                        </td>
-                                      </tr>
-                                    <?php endforeach;?>
-                                  </tbody>
-                              </table>
-                          </div>
-                      </div>
-                  </div>
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title m-b-0">Data Program Sekolah</h3>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addprogram"><span class="fa fa-plus fa-fw"></span>Tambah Program</button>
+                            <hr>
+                            <div class="table-responsive">
+                                <table id="example24" class="display wrap" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Photo</th>
+                                            <th>Nama Program</th>
+                                            <th>Deskrkipsi</th>
+                                            <th>Unit Sekolah</th>
+                                            <th>Author</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach($program->result_array() as $prog) :
+                                        $idp = $prog['id_program'];
+                                        $namaprogram = $prog['nama_program'];
+                                        $deskripsip = $prog['deskripsi'];
+                                        $unitsekolah = $prog['unit_sekolah'];
+                                        $idu = $prog['id_author'];
+                                        $namau = $prog['nama_author'];
+                                        $fotop = $prog['foto_program'];
+                                        ?>
+                                        <tr>
+                                            <td><img src="<?php echo base_url().'template/program/'.$fotop;?>" class="img img-rounded" style="width:200px; height:100px;"></td>
+                                            <td><?php echo $namaprogram;?></td>
+                                            <td><?php echo $deskripsip;?></td>
+                                            <td><?php echo $unitsekolah;?></td>
+                                            <td><?php echo $namau;?></td>
+                                            <td style="text-align:right;">
+                                                <a class="btn btn-success btn-circle" data-toggle="modal" data-target="#PEdit<?php echo $idp;?>"><span class="fa fa-pencil"></span></a>
+                                                <a class="btn btn-danger btn-circle" data-toggle="modal" data-target="#PHapus<?php echo $idp;?>"><span class="fa fa-trash"></span></a>
+                                            </td>
+                                        </tr>
+                                        <?php endforeach;?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row">

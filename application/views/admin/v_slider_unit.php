@@ -152,6 +152,8 @@
                     </div>
                 </div>
 
+                <?php $this->load->view('admin/tabs_penjelasan');?>
+
                 <div class="row">
                   <div class="col-sm-12">
                       <div class="white-box">
@@ -431,6 +433,24 @@
     <script src="<?php echo base_url()?>materialize/js/custom.min.js"></script>
     <!--Style Switcher -->
     <script src="<?php echo base_url()?>plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="<?php echo base_url()?>plugins/bower_components/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ($("#mymce").length > 0) {
+                tinymce.init({
+                    selector: "textarea#mymce"
+                    , theme: "modern"
+                    , height: 300
+                    , plugins: [
+   "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker"
+   , "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking"
+   , "save table contextmenu directionality emoticons template paste textcolor textpattern"
+   ]
+                    , toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons"
+                , });
+            }
+        });
+    </script>
     <script type="text/javascript">
         (function () {
                 [].slice.call(document.querySelectorAll('.sttabs')).forEach(function (el) {
@@ -506,8 +526,27 @@
         <script type="text/javascript">
                 swal("Hooray!!","Slide Unit successful deleted","success")
         </script>
+    <?php elseif($this->session->flashdata('msg')=='successvisi'):?>
+        <script type="text/javascript">
+                swal("Hooray!!","Visi, Misi & Tujuan Unit successful updated","info")
+        </script>
+    <?php elseif($this->session->flashdata('msg')=='successunggul'):?>
+        <script type="text/javascript">
+                swal("Hooray!!","Keunggulan Unit successful updated","info")
+        </script>
+    <?php elseif($this->session->flashdata('msg')=='successkur'):?>
+        <script type="text/javascript">
+                swal("Hooray!!","Kurikulum Unit successful updated","info")
+        </script>
+    <?php elseif($this->session->flashdata('msg')=='successeks'):?>
+        <script type="text/javascript">
+                swal("Hooray!!","Ekstrakurikuler Unit successful updated","info")
+        </script>
+    <?php elseif($this->session->flashdata('msg')=='successprofil'):?>
+        <script type="text/javascript">
+                swal("Hooray!!","Profil Unit successful updated","info")
+        </script>
       <?php else:?>
       <?php endif;?>
 </body>
-
 </html>

@@ -190,39 +190,57 @@
 				<div class="container">
 					<div class="row">
 						<div class="col">
-							<h2 class="font-weight-bold text-color-dark" align="center">Mata Pelajaran dan Guru Pendidik </h2>
+							<h2 class="font-weight-bold text-color-dark" align="center">Informasi SD </h2>
 						</div>
-						<div class="col-lg-8">
+							<div class="col-lg-8">
 								<div class="featured-box featured-box-primary featured-box-text-left">
 									<div class="box-content">
 										<div class="row">
-											<div class="col-lg-6 mb-4 mb-lg-0">
-
-												<h3 class="heading-primary">Mata Pelajaran</h3>
-
-												<ul class="list list-icons list-primary">
-													<?php
-														foreach($guru->result_array() as $g):
-															$matpel = $g['guru_mapel'];
-													?>
-													<li class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0"><i class="fa fa-book"></i>Mata Pelajaran <strong><?php echo $matpel;?></strong></li>
-												<?php endforeach;?>
-												</ul>
-
+											<div class="col-lg-4">
+												<div class="tabs tabs-vertical tabs-left tabs-navigation">
+													<ul class="nav nav-tabs col-sm-3">
+														<li class="nav-item active">
+															<a class="nav-link" href="#tabsNavigation1" data-toggle="tab"><i class="fa fa-institution"></i> Visi, Misi, Tujuan</a>
+														</li>
+														<li class="nav-item">
+															<a class="nav-link" href="#tabsNavigation2" data-toggle="tab"><i class="fa fa-certificate"></i> Kurikulum</a>
+														</li>
+														<li class="nav-item">
+															<a class="nav-link" href="#tabsNavigation3" data-toggle="tab"><i class="fa fa-star"></i> Keunggulan</a>
+														</li>
+														<li class="nav-item">
+															<a class="nav-link" href="#tabsNavigation4" data-toggle="tab"><i class="fa fa-cubes"></i>Ekstrakurikuler</a>
+														</li>
+														<li class="nav-item">
+															<a class="nav-link" href="#tabsNavigation5" data-toggle="tab"><i class="fa fa-address-book"></i> Profil Pembelajar</a>
+														</li>
+													</ul>
+												</div>
 											</div>
-											<div class="col-lg-6">
-
-												<h3 class="heading-primary">Guru</h3>
-
-												<ul class="list list-icons list-primary">
-													<?php
-															foreach($guru->result_array() as $g):
-																$namaguru = $g['guru_nama'];
-													?>
-													<li class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0"><i class="fa fa-user"></i> <?php echo $namaguru;?></li>
-												<?php endforeach;?>
-												</ul>
-
+											<?php
+												$p = $penjelasansd->row_array();
+											?>
+											<div class="col-lg-8">
+												<div class="tab-pane tab-pane-navigation appear-animation active" data-appear-animation="fadeIn" data-appear-animation-delay="0" id="tabsNavigation1">
+													<h4>Visi, Misi, Tujuan</h4>
+													<?php echo $p['visi_misi'];?>
+												</div>
+												<div class="tab-pane tab-pane-navigation appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="0" id="tabsNavigation2">
+													<h4>Kurikulum</h4>
+													<?php echo $p['kurikulum'];?>
+												</div>
+												<div class="tab-pane tab-pane-navigation appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="0" id="tabsNavigation3">
+													<h4>Keunggulan</h4>
+													<?php echo $p['keunggulan'];?>
+												</div>
+												<div class="tab-pane tab-pane-navigation appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="0" id="tabsNavigation4">
+													<h4>Ekstrakurikuler</h4>
+													<?php echo $p['ekskul'];?>
+												</div>
+												<div class="tab-pane tab-pane-navigation appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="0" id="tabsNavigation5">
+													<h4>Profil Pembelajar</h4>
+													<?php echo $p['profil'];?>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -239,8 +257,7 @@
 									</div>
 								</div>
 							</div>
-
-							</div>
+					</div>
 				</div>
 
 				<section class="custom-section-padding">

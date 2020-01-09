@@ -7,14 +7,192 @@
               redirect($url);
           };
       $this->load->model('m_slider');
+      $this->load->model('M_web_admin');
     }
 
     function index(){
+      $id1 = 1;
+      $id2 = 2;
+      $id3 = 3;
+      $id4 = 4;
+      $id5 = 5;
+      $x['penjelasansd'] = $this->M_web_admin->get_penjelasan_by_id($id3);
+      $x['penjelasantk'] = $this->M_web_admin->get_penjelasan_by_id($id4);
+      $x['penjelasansmp'] = $this->M_web_admin->get_penjelasan_by_id($id2);
+      $x['penjelasansma'] = $this->M_web_admin->get_penjelasan_by_id($id1);
       $x['units'] = $this->m_slider->get_unit_pendidikan();
       $x['slider'] = $this->m_slider->get_slider_pendidikan();
       $x['tentang'] = $this->m_slider->get_tentang_unit();
       $this->load->view('admin/v_slider_unit',$x);
     }
+
+     //SMA//
+  function up_visisatu(){
+    $id = $this->input->post('xkode1');
+    $isi = $this->input->post('isi1');
+    $this->M_web_admin->up_visimisi($id,$isi);
+    echo $this->session->set_flashdata('msg','successvisi');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_kursatu(){
+    $id = $this->input->post('xkode1');
+    $isi = $this->input->post('isi1');
+    $this->M_web_admin->up_kur($id,$isi);
+    echo $this->session->set_flashdata('msg','successkur');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_unggulsatu(){
+    $id = $this->input->post('xkode1');
+    $isi = $this->input->post('isi1');
+    $this->M_web_admin->up_unggul($id,$isi);
+    echo $this->session->set_flashdata('msg','successunggul');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_ekskulsatu(){
+    $id = $this->input->post('xkode1');
+    $isi = $this->input->post('isi1');
+    $this->M_web_admin->up_ekskul($id,$isi);
+    echo $this->session->set_flashdata('msg','successeks');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_profilsatu(){
+    $id = $this->input->post('xkode1');
+    $isi = $this->input->post('isi1');
+    $this->M_web_admin->up_profil($id,$isi);
+    echo $this->session->set_flashdata('msg','successprofil');
+    redirect('admin/slider_unit_pendidikan');
+  }
+  //END//
+
+  //SMP//
+  function up_visidua(){
+    $id = $this->input->post('xkode2');
+    $isi = $this->input->post('isi2');
+    $this->M_web_admin->up_visimisi($id,$isi);
+    echo $this->session->set_flashdata('msg','successvisi');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_kurdua(){
+    $id = $this->input->post('xkode2');
+    $isi = $this->input->post('isi2');
+    $this->M_web_admin->up_kur($id,$isi);
+    echo $this->session->set_flashdata('msg','successkur');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_ungguldua(){
+    $id = $this->input->post('xkode2');
+    $isi = $this->input->post('isi2');
+    $this->M_web_admin->up_unggul($id,$isi);
+    echo $this->session->set_flashdata('msg','successunggul');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_ekskuldua(){
+    $id = $this->input->post('xkode2');
+    $isi = $this->input->post('isi2');
+    $this->M_web_admin->up_ekskul($id,$isi);
+    echo $this->session->set_flashdata('msg','successeks');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_profildua(){
+    $id = $this->input->post('xkode2');
+    $isi = $this->input->post('isi2');
+    $this->M_web_admin->up_profil($id,$isi);
+    echo $this->session->set_flashdata('msg','successprofil');
+    redirect('admin/slider_unit_pendidikan');
+  }
+  //END//
+
+  //SD//
+  function up_visitiga(){
+    $id = $this->input->post('xkode3');
+    $isi = $this->input->post('isi3');
+    $this->M_web_admin->up_visimisi($id,$isi);
+    echo $this->session->set_flashdata('msg','successvisi');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_kurtiga(){
+    $id = $this->input->post('xkode3');
+    $isi = $this->input->post('isi3');
+    $this->M_web_admin->up_kur($id,$isi);
+    echo $this->session->set_flashdata('msg','successkur');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_unggultiga(){
+    $id = $this->input->post('xkode3');
+    $isi = $this->input->post('isi3');
+    $this->M_web_admin->up_unggul($id,$isi);
+    echo $this->session->set_flashdata('msg','successunggul');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_ekskultiga(){
+    $id = $this->input->post('xkode3');
+    $isi = $this->input->post('isi3');
+    $this->M_web_admin->up_ekskul($id,$isi);
+    echo $this->session->set_flashdata('msg','successeks');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_profiltiga(){
+    $id = $this->input->post('xkode3');
+    $isi = $this->input->post('isi3');
+    $this->M_web_admin->up_profil($id,$isi);
+    echo $this->session->set_flashdata('msg','successprofil');
+    redirect('admin/slider_unit_pendidikan');
+  }
+  //END//
+
+  //TK PG//
+  function up_visiempat(){
+    $id = $this->input->post('xkode4');
+    $isi = $this->input->post('isi4');
+    $this->M_web_admin->up_visimisi($id,$isi);
+    echo $this->session->set_flashdata('msg','successvisi');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_kurempat(){
+    $id = $this->input->post('xkode4');
+    $isi = $this->input->post('isi4');
+    $this->M_web_admin->up_kur($id,$isi);
+    echo $this->session->set_flashdata('msg','successkur');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_unggulempat(){
+    $id = $this->input->post('xkode4');
+    $isi = $this->input->post('isi4');
+    $this->M_web_admin->up_unggul($id,$isi);
+    echo $this->session->set_flashdata('msg','successunggul');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_ekskulempat(){
+    $id = $this->input->post('xkode4');
+    $isi = $this->input->post('isi4');
+    $this->M_web_admin->up_ekskul($id,$isi);
+    echo $this->session->set_flashdata('msg','successeks');
+    redirect('admin/slider_unit_pendidikan');
+  }
+
+  function up_profilempat(){
+    $id = $this->input->post('xkode4');
+    $isi = $this->input->post('isi4');
+    $this->M_web_admin->up_profil($id,$isi);
+    echo $this->session->set_flashdata('msg','successprofil');
+    redirect('admin/slider_unit_pendidikan');
+  }
+  //END//
 
     function hapus_slider_unit(){
       $id = $this->input->post('id');
