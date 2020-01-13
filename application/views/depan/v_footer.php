@@ -37,9 +37,9 @@
 				<br>
 				<h5>Kunjungi Juga</h5>
 				<ul class="list list-icons list-icons-sm">
-					<li><i class="fa fa-caret-right"><a href="https://bosowafoundation.org" target="_blank"> Bosowa Foundation</a></li>
-					<li><i class="fa fa-caret-right"><a href="https://cilegon.bosowaschool.sch.id/" target="_blank"> Bosowa Al-Azhar Cilegon</a></li>
-					<li><i class="fa fa-caret-right"><a href="https://www.makassar.bosowaschool.sch.id" target="_blank"> Bosowa School Makassar</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="https://bosowafoundation.org" target="_blank"> Bosowa Foundation</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="https://cilegon.bosowaschool.sch.id/" target="_blank"> Bosowa Al-Azhar Cilegon</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="https://www.makassar.bosowaschool.sch.id" target="_blank"> Bosowa School Makassar</a></li>
 				</ul>
 			</div>
 		</div>
