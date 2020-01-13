@@ -197,7 +197,7 @@
 				<hr class="tall">
 
 				<div class="center">
-					<img src="<?php echo base_url()?>template/keunggulan_sbbi.jpg" width="1366px" alt="" />
+					<img class="img-responsive" src="<?php echo base_url()?>template/keunggulan_sbbi.jpg" width="1366px" alt="" />
 				</div>
 
                 <hr class="tall">
