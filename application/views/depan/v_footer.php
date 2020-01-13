@@ -34,6 +34,13 @@
 					<li class="social-icons-instagram"><a href="https://www.instagram.com/bosowabinainsani/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
 					<li class="social-icons-youtube"><a href="https://www.youtube.com/channel/UCtQZomwlcfcTlUAF_YKyHiw" target="_blank" title="Youtube"><i class="fa fa-youtube"></i></a></li>
 				</ul>
+				<br>
+				<h5>Kunjungi Juga</h5>
+				<ul class="list list-icons list-icons-sm">
+					<li><i class="fa fa-caret-right"><a class="nav-link" href="https://bosowafoundation.org" target="_blank"> Bosowa Foundation</a></li>
+					<li><i class="fa fa-caret-right"><a class="nav-link" href="https://cilegon.bosowaschool.sch.id/" target="_blank"> Bosowa Al-Azhar Cilegon</a></li>
+					<li><i class="fa fa-caret-right"><a class="nav-link" href="https://www.makassar.bosowaschool.sch.id" target="_blank"> Bosowa School Makassar</a></li>
+				</ul>
 			</div>
 		</div>
 	</div>
