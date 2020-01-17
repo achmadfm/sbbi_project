@@ -170,7 +170,7 @@
 									<hr class="solid">
 									<p align="justify"><?php echo $row->file_deskripsi;?></p>
 										<a href="<?php echo base_url().'template/files/'.$row->file_data;?>" target="_blank" class="btn btn-3d btn-info btn-xs mb-2"><i class="fa fa-search"></i> Lihat</a>
-										<a href="<?php echo site_url('newsletter/get_file/'.$row->file_id);?>" class="btn btn-3d btn-primary btn-xs mb-2"><i class="fa fa-cloud-download"></i> Download</a>
+										<a href="<?php echo site_url('emagazine/get_file/'.$row->file_id);?>" class="btn btn-3d btn-primary btn-xs mb-2"><i class="fa fa-cloud-download"></i> Download</a>
 								</div>
 							</div>
 							<hr class="tall">

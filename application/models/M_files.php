@@ -2,7 +2,7 @@
 class M_files extends CI_Model{
 
 	function get_all_files(){
-		$hsl=$this->db->query("SELECT file_id,file_judul,file_deskripsi,file_sampul,DATE_FORMAT(file_tanggal,'%d-%M-%Y') AS tanggal,file_download,file_data FROM tbl_files ORDER BY file_id DESC");
+		$hsl=$this->db->query("SELECT tbl_files.*,DATE_FORMAT(file_tanggal,'%d-%M-%Y') AS tanggal,file_download,file_data FROM tbl_files ORDER BY file_id DESC");
 		return $hsl;
 	}
 	function simpan_file($judul,$deskripsi,$file){
@@ -27,7 +27,7 @@ class M_files extends CI_Model{
 	}
 
 	function get_file_byid($id){
-		$hsl=$this->db->query("SELECT file_id,file_judul,file_deskripsi,file_sampul,DATE_FORMAT(file_tanggal,'%d-%M-%Y') AS tanggal,file_download,file_data FROM tbl_files WHERE file_id='$id'");
+		$hsl=$this->db->query("SELECT tbl_files.*,DATE_FORMAT(file_tanggal,'%d-%M-%Y') AS tanggal,file_download,file_data FROM tbl_files WHERE file_id='$id'");
 		return $hsl;
 	}
 

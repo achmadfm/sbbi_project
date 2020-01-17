@@ -126,8 +126,11 @@ class Files extends CI_Controller{
 	function hapus_file(){
 		$kode=$this->input->post('kode');
 		$data=$this->input->post('file');
+		$foto=$this->input->post('foto');
 		$path='./template/files/'.$data;
+		$path='./template/files/sampul/'.$foto;
 		unlink($path);
+		unlink($foto);
 		$this->m_files->hapus_file($kode);
 		echo $this->session->set_flashdata('msg','success-hapus');
 		redirect('admin/files');

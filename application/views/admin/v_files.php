@@ -143,6 +143,7 @@
                                           <td><?php echo $tanggal;?></td>
                                           <td><?php echo $download;?></td>
                                           <td style="text-align:right;">
+                                                <a class="btn btn-info btn-circle" data-toggle="modal" data-target="#ModalSampul<?php echo $id;?>"><span class="fa fa-file-image-o"></span></a>
                                                 <a class="btn btn-success btn-circle" data-toggle="modal" data-target="#ModalEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
                                                 <a class="btn btn-danger btn-circle" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
                                           </td>
@@ -251,10 +252,8 @@
                 <?php foreach ($data->result_array() as $i) :
                     $id=$i['file_id'];
                     $judul=$i['file_judul'];
-                    $deskripsi=$i['file_deskripsi'];
-                    $tanggal=$i['tanggal'];
-                    $download=$i['file_download'];
                     $file=$i['file_data'];
+                    $foto=$i['file_sampul'];
                 ?>
 	<!--Modal Hapus Pengguna-->
                 <div class="modal fade" id="ModalHapus<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -266,8 +265,9 @@
                             </div>
                             <form class="form-horizontal" action="<?php echo base_url().'admin/files/hapus_file'?>" method="post" enctype="multipart/form-data">
                             <div class="modal-body">
-        							             <input type="hidden" name="kode" value="<?php echo $id;?>"/>
-                                   <input type="hidden" name="file" value="<?php echo $file;?>">
+        							<input type="hidden" name="kode" value="<?php echo $id;?>"/>
+                                    <input type="hidden" name="file" value="<?php echo $file;?>">
+                                    <input type="hidden" name="foto" value="<?php echo $foto;?>">
                                     <p>Apakah Anda yakin mau menghapus file <b><?php echo $judul;?></b> ?</p>
 
                             </div>
@@ -404,10 +404,18 @@
         <script type="text/javascript">
                 swal("Hooray!!","Files successful added","success")
         </script>
+    <?php elseif($this->session->flashdata('msg')=='successsampul'):?>
+        <script type="text/javascript">
+                swal("Hooray!!","Sampul successful added","success")
+        </script>
     <?php elseif($this->session->flashdata('msg')=='info'):?>
         <script type="text/javascript">
                 swal("Hooray!!","Files successful updated","info")
         </script>
+    <?php elseif($this->session->flashdata('msg')=='warning'):?>
+        <script type="text/javascript">
+                swal("Hooray!!","Your File too Large, Careful","info")
+        </script>    
     <?php elseif($this->session->flashdata('msg')=='success-hapus'):?>
         <script type="text/javascript">
                 swal("Hooray!!","Files successful deleted","success")
