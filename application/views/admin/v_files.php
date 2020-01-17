@@ -281,6 +281,43 @@
                 </div>
         	<?php endforeach;?>
 
+            <?php foreach ($data->result_array() as $i) :
+                    $id=$i['file_id'];
+                    $sampul=$i['file_sampul'];
+                ?>
+	<!--Modal Hapus Pengguna-->
+                <div class="modal fade" id="ModalSampul<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
+                                <h4 class="modal-title" id="myModalLabel">Tambah Sampul</h4>
+                            </div>
+                            <form class="form-horizontal" action="<?php echo base_url().'admin/files/simpan_sampul'?>" method="post" enctype="multipart/form-data">
+                            <div class="modal-body">
+        						<input type="hidden" name="kode" value="<?php echo $id;?>"/>
+                                <div class="form-group">
+                                    <Label for="inputUserName" class="col-sm-4 control-label">Sampul Saat ini</Label>
+                                    <img src="<?php echo base_url().'template/files/sampul/'.$sampul;?>" style="width:200px; height:300px;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputUserName" class="col-sm-4 control-label">Sampul</label>
+                                    <div class="col-sm-7">
+                                    <input type="file" name="filefoto">
+                                    NB: file harus bertype bmp|gif|jpg|jpeg|png. ukuran maksimal 2MB dan minimal 100KB .
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success btn-flat" id="simpan">Simpan</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        	<?php endforeach;?>
+
             </div>
             <!-- /.container-fluid -->
             <footer class="footer text-center"> 2017 &copy; Ample Admin brought to you by themedesigner.in </footer>

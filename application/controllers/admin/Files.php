@@ -31,6 +31,32 @@ class Files extends CI_Controller{
 		redirect('admin/files');
 	}
 
+	function simpan_sampul(){
+		$config['upload_path'] = './template/files/sampul/'; //path folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+        $config['encrypt_name'] = FALSE; //nama yang terupload nantinya
+
+		$this->upload->initialize($config);
+		if(!empty($_FILES['filefoto']['name']))
+		{
+			if ($this->upload->do_upload('filefoto'))
+			{
+				$gbr = $this->upload->data();
+				$file=$gbr['file_name'];
+				$kode=$this->input->post('kode');
+				$this->m_files->tambah_sampul($kode,$file);
+				echo $this->session->set_flashdata('msg','successsampul');
+				redirect('admin/files');
+			}else{
+				echo $this->session->set_flashdata('msg','warning');
+				redirect('admin/files');
+			}
+
+		}else{
+			redirect('admin/files');
+		}
+	}
+
 	function simpan_file(){
 		$config['upload_path'] = './template/files/'; //path folder
         $config['allowed_types'] = 'pdf|doc|docx|ppt|pptx|zip'; //type yang dapat diakses bisa anda sesuaikan

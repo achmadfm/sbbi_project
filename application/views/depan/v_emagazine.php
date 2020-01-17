@@ -160,7 +160,7 @@
 									<div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'margin': 10}">
 										<div>
 											<span class="img-thumbnail d-block">
-												<img alt="" width="250" height="350" class="img-fluid" src="<?php echo base_url()?>template/default.jpg">
+												<img alt="" width="250" height="350" class="img-fluid" src="<?php echo base_url().'template/files/sampul/'.$row->file_sampul;?>">
 											</span>
 										</div>
 									</div>
